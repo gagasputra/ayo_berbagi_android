@@ -18,6 +18,8 @@ import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -32,8 +34,11 @@ import com.example.ayoberbagi_mysql.config.ImageAdapter;
 import com.example.ayoberbagi_mysql.config.NotificationReceiver;
 import com.example.ayoberbagi_mysql.config.Preferences;
 import com.example.ayoberbagi_mysql.config.config;
+import com.example.ayoberbagi_mysql.donatur.adapter.AdapterDonasiTerkini;
+import com.example.ayoberbagi_mysql.donatur.model.DonasiModel;
 import com.example.ayoberbagi_mysql.donatur.model.DonaturModel;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -61,6 +66,11 @@ public class Donasi extends AppCompatActivity {
     LayoutInflater inflater;
     View dialogView;
 
+    RecyclerView recyclerView;
+    RecyclerView.Adapter mAdapter;
+    RecyclerView.LayoutManager mManager;
+    ArrayList<DonasiModel> mItems;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +80,14 @@ public class Donasi extends AppCompatActivity {
 
         intent = getIntent();
         context = Donasi.this;
+
+        recyclerView = findViewById(R.id.recycle_view);
+        mItems = new ArrayList<>();
+        mAdapter = new AdapterDonasiTerkini(Donasi.this, mItems);
+        recyclerView.setAdapter(mAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        loadjson();
 
         Tid_bencana = intent.getStringExtra("id_bencana");
         Tnama_bencana = intent.getStringExtra("nama_bencana");
@@ -171,8 +189,8 @@ public class Donasi extends AppCompatActivity {
                                 startActivity(i);
                             } else {
                                 Intent intent = new Intent(Donasi.this, DonasiBarang.class);
-                                intent.putExtra("id_bencana",Tid_bencana);
-                                intent.putExtra("nama_bencana",Tnama_bencana);
+                                intent.putExtra("id_bencana", Tid_bencana);
+                                intent.putExtra("nama_bencana", Tnama_bencana);
 
                                 startActivity(intent);
                             }
@@ -242,8 +260,8 @@ public class Donasi extends AppCompatActivity {
                                 startActivity(i);
                             } else {
                                 Intent intent = new Intent(Donasi.this, DonasiUang.class);
-                                intent.putExtra("id_bencana",Tid_bencana);
-                                intent.putExtra("nama_bencana",Tnama_bencana);
+                                intent.putExtra("id_bencana", Tid_bencana);
+                                intent.putExtra("nama_bencana", Tnama_bencana);
 
                                 startActivity(intent);
                             }
@@ -343,6 +361,49 @@ public class Donasi extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+
+    public void loadjson() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, config.URL_DONASI_TERKINI,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("volley", "response : " + response.toString());
+                        try {
+                            JSONArray data = new JSONArray(response);
+                            for (int i = 0; i < data.length(); i++) {
+                                JSONObject hasil = data.getJSONObject(i);
+                                DonasiModel md = new DonasiModel();
+                                md.setNama_donatur(hasil.getString("nama_donatur"));
+                                md.setAnonim(hasil.getString("anonim"));
+                                md.setNominal(hasil.getString("nominal"));
+
+                                mItems.add(md);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        mAdapter.notifyDataSetChanged();
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("volley", "error : " + error.getMessage());
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                //Adding parameters to request
+                params.put("id_bencana", intent.getStringExtra("id_bencana"));
+                //returning parameter
+                return params;
+            }
+
+            ;
+        };
+        Volley.newRequestQueue(this).add(stringRequest);
     }
 
 }

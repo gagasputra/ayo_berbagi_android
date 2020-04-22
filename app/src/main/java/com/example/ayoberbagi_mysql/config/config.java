@@ -38,6 +38,7 @@ public class config {
     public static final String URL_LOGIN = URL + "?menu=login";
     public static final String URL_REGISTER = URL + "?menu=register";
     public static final String URL_VIEW_BENCANA = URL + "?menu=view_bencana";
+    public static final String URL_DONASI_TERKINI = URL + "?menu=donasi_terkini";
     public static final String URL_DONASI = URL + "?menu=add_donasi";
     public static final String URL_DONASI_BARANG = URL + "?menu=donasi_barang";
     public static final String URL_VIEW_LAPORAN = URL + "?menu=view_laporan";
@@ -72,6 +73,7 @@ public class config {
     public static final String KEY_ID_DONASI = "id_donasi";
     public static final String KEY_ID_PJ = "id_pj";
     public static final String KEY_NOMINAL = "nominal";
+    public static final String KEY_ANONIM = "anonim";
 
 
     //JSON Tags

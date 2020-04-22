@@ -51,7 +51,8 @@ public class DProsesRelawan extends Fragment {
     Intent intent;
 
     String id, username;
-    public DProsesRelawan(){
+
+    public DProsesRelawan() {
 
     }
 
@@ -88,7 +89,7 @@ public class DProsesRelawan extends Fragment {
 
     }
 
-    public void loadjson(){
+    public void loadjson() {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, config.URL_VIEW_RELAWAN_PROSES,
                 new Response.Listener<String>() {
@@ -98,7 +99,7 @@ public class DProsesRelawan extends Fragment {
                         Log.d("response", "response : " + response);
                         try {
                             JSONArray data = new JSONArray(response);
-                            for (int i = 0; i < data.length(); i++){
+                            for (int i = 0; i < data.length(); i++) {
 
                                 JSONObject hasil = data.getJSONObject(i);
                                 RelawanProsesModel rpm = new RelawanProsesModel();
@@ -126,7 +127,7 @@ public class DProsesRelawan extends Fragment {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("error", ""+error);
+                        Log.e("error", "" + error);
                     }
                 }) {
             @Override
@@ -143,8 +144,6 @@ public class DProsesRelawan extends Fragment {
         //Adding the string request to the queue
         Volley.newRequestQueue(getContext()).add(stringRequest);
     }
-
-
 
 
 }

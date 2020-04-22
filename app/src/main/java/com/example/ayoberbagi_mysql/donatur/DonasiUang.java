@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -38,7 +39,8 @@ public class DonasiUang extends AppCompatActivity {
     String Tid_bencana, Tnama_bencana;
     TextView id_bencana, nama_bencana;
     Context context;
-    String nominal;
+    String nominal, anonim;
+    CheckBox CBanonim;
 
     Intent intent;
 
@@ -68,6 +70,7 @@ public class DonasiUang extends AppCompatActivity {
         RB100k = findViewById(R.id.RB100k);
         RBlain = findViewById(R.id.RBlain);
         ETnominal = findViewById(R.id.ETnominal);
+        CBanonim = findViewById(R.id.anonim);
     }
 
     public void onRadioButtonClicked(View view) {
@@ -123,6 +126,12 @@ public class DonasiUang extends AppCompatActivity {
             nominal = ETnominal.getText().toString();
         }
 
+        if (CBanonim.isChecked()) {
+            anonim = "1";
+        } else {
+            anonim = "0";
+        }
+
 //        final String nominal = ETnominal.getText().toString().trim();
 //
         if (validate()) {
@@ -172,6 +181,7 @@ public class DonasiUang extends AppCompatActivity {
 
                     Map<String, String> params = new HashMap<>();
                     params.put(config.KEY_NOMINAL, nominal);
+                    params.put(config.KEY_ANONIM, anonim);
                     params.put(config.KEY_ID_BENCANA, intent.getStringExtra("id_bencana"));
                     params.put(config.KEY_ID_DONATUR, donaturModel.getIdDonatur());
 
@@ -185,7 +195,7 @@ public class DonasiUang extends AppCompatActivity {
     }
 
     public boolean validate() {
-        if(RBlain.isChecked()) {
+        if (RBlain.isChecked()) {
 
             boolean valid_nominal = false;
 
@@ -201,7 +211,7 @@ public class DonasiUang extends AppCompatActivity {
                 valid_nominal = true;
                 ETnominal.setError(null);
             }
-        return valid_nominal;
+            return valid_nominal;
         }
         return true;
     }

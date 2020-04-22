@@ -1,10 +1,11 @@
 package com.example.ayoberbagi_mysql.donatur.model;
 
 public class DonasiModel {
-    private String id_donasi, id_bencana, id_donatur, kategori, isi_donasi, waktu_donasi, waktu_diterima, jumlah, foto, path_foto, nominal, bukti, upload_path, konfirmasi, status_donasi;
+    private String id_donasi, nama_donatur, id_bencana, id_donatur, kategori, isi_donasi, waktu_donasi, waktu_diterima, jumlah, foto, path_foto, nominal, bukti, upload_path, konfirmasi, anonim;
 
     public DonasiModel() {
         this.id_donasi = id_donasi;
+        this.nama_donatur = nama_donatur;
         this.id_bencana = id_bencana;
         this.id_donatur = id_donatur;
         this.kategori = kategori;
@@ -18,7 +19,7 @@ public class DonasiModel {
         this.bukti = bukti;
         this.upload_path = upload_path;
         this.konfirmasi = konfirmasi;
-        this.status_donasi = status_donasi;
+        this.anonim = anonim;
     }
 
     public String getId_donasi() {
@@ -27,6 +28,14 @@ public class DonasiModel {
 
     public void setId_donasi(String id_donasi) {
         this.id_donasi = id_donasi;
+    }
+
+    public String getNama_donatur() {
+        return nama_donatur;
+    }
+
+    public void setNama_donatur(String nama_donatur) {
+        this.nama_donatur = nama_donatur;
     }
 
     public String getId_bencana() {
@@ -133,11 +142,11 @@ public class DonasiModel {
         this.konfirmasi = konfirmasi;
     }
 
-    public String getStatus_donasi() {
-        return status_donasi;
+    public String getAnonim() {
+        return anonim;
     }
 
-    public void setStatus_donasi(String status_donasi) {
-        this.status_donasi = status_donasi;
+    public void setAnonim(String anonim) {
+        this.anonim = anonim;
     }
 }

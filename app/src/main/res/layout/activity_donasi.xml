@@ -54,54 +54,54 @@
                 android:layout_height="match_parent">
 
                 <RadioButton
-                    android:padding="10dp"
-                    android:background="@drawable/radbutton"
-                    android:layout_marginTop="10dp"
                     android:id="@+id/RB10k"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/radbutton"
                     android:onClick="onRadioButtonClicked"
+                    android:padding="10dp"
                     android:text="Rp10.000"
                     android:textSize="20dp" />
 
                 <RadioButton
-                    android:padding="10dp"
-                    android:background="@drawable/radbutton"
-                    android:layout_marginTop="10dp"
                     android:id="@+id/RB20k"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/radbutton"
                     android:onClick="onRadioButtonClicked"
+                    android:padding="10dp"
                     android:text="Rp20.000"
                     android:textSize="20dp" />
 
                 <RadioButton
-                    android:layout_marginTop="10dp"
                     android:id="@+id/RB50k"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/radbutton"
                     android:onClick="onRadioButtonClicked"
                     android:padding="10dp"
-                    android:background="@drawable/radbutton"
                     android:text="Rp50.000"
                     android:textSize="20dp" />
 
                 <RadioButton
-                    android:padding="10dp"
-                    android:background="@drawable/radbutton"
-                    android:layout_marginTop="10dp"
                     android:id="@+id/RB100k"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/radbutton"
                     android:onClick="onRadioButtonClicked"
+                    android:padding="10dp"
                     android:text="Rp100.000"
                     android:textSize="20dp" />
 
                 <RadioButton
-                    android:layout_marginTop="10dp"
                     android:id="@+id/RBlain"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
                     android:onClick="onRadioButtonClicked"
                     android:text="Nominal Lainnya"
                     android:textSize="16dp" />
@@ -145,6 +145,15 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/anonim"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Donasi Sebagai Anonim"
+                    android:textSize="16dp" />
 
                 <Button
                     android:id="@+id/donasi_uang"

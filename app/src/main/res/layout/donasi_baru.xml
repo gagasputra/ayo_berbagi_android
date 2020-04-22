@@ -9,289 +9,318 @@
     android:paddingRight="5dp"
     android:paddingBottom="10dp">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/nama_bencana"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_toRightOf="@+id/thumbnail"
-            android:text="Nama Bencana"
-            android:textAlignment="center"
-            android:textColor="#040404"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:typeface="sans" />
-
-        <ViewFlipper
-            android:id="@+id/flipperid"
-            android:layout_width="285dp"
-            android:layout_height="256dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:elevation="5dp"
-            android:flipInterval="4000">
-
-            <com.android.volley.toolbox.NetworkImageView
-                android:id="@+id/gambar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="fitXY" />
-
-            <com.android.volley.toolbox.NetworkImageView
-                android:id="@+id/gambar2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="fitXY" />
-
-            <com.android.volley.toolbox.NetworkImageView
-                android:id="@+id/gambar3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="fitXY" />
-
-        </ViewFlipper>
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#000"></RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="fill_parent"
+            <TextView
+                android:id="@+id/nama_bencana"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:text="Nama Bencana"
+                android:textAlignment="center"
+                android:textColor="#040404"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="sans" />
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.5"
-                    android:text="Tanggal Kejadian"
-                    android:textColor="@android:color/black"
-                    android:textSize="13dp" />
+            <ViewFlipper
+                android:id="@+id/flipperid"
+                android:layout_width="285dp"
+                android:layout_height="256dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:elevation="5dp"
+                android:flipInterval="4000">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text=":" />
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/gambar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY" />
 
-                <EditText
-                    android:id="@+id/tgl_kejadian"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.8"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:textAlignment="center"
-                    android:textSize="14dp" />
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/gambar2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY" />
 
-                <!--                <TextView-->
-                <!--                    android:id="@+id/nama_relawan"-->
-                <!--                    android:layout_width="0dp"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_weight="1.8"-->
-                <!--                    android:text="TextView"-->
-                <!--                    android:textColor="@android:color/black" />-->
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/gambar3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.5"
-                    android:text="Lokasi Bencana"
-                    android:textColor="@android:color/black"
-                    android:textSize="13dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text=":" />
-
-                <EditText
-                    android:id="@+id/lokasi"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.8"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:textAlignment="center"
-                    android:textSize="14dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/TVTgl_donasi"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.5"
-                    android:text="Batas Akhir Donasi"
-                    android:textColor="@android:color/black"
-                    android:textSize="13dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text=":" />
-
-                <EditText
-                    android:id="@+id/deadline"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.8"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:textAlignment="center"
-                    android:textSize="14dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/TVketerangan"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.5"
-                    android:text="Nama Relawan"
-                    android:textColor="@android:color/black"
-                    android:textSize="13dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text=":" />
-
-                <EditText
-                    android:id="@+id/nama_relawan"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.8"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:textAlignment="center"
-                    android:textSize="14dp" />
-
-            </LinearLayout>
+            </ViewFlipper>
 
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
                 android:background="#000"></RelativeLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/detailBencana"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#2ca545"
-                    android:drawableLeft="@drawable/search"
-                    android:onClick="detailBencana"
-                    android:paddingLeft="10dp"
-                    android:text="Detail Bencana"
-                    android:textColor="@color/whiteTextColor"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:id="@+id/tv_file_path"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Pilih Tipe Donasi"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black" />
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/donasi_uang"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/button_submit"
-                        android:drawableLeft="@drawable/rupiah"
-                        android:onClick="donasiUang"
-                        android:paddingLeft="20dp"
-                        android:text="Donasi Uang"
-                        android:textColor="@color/whiteTextColor" />
+                        android:layout_weight="0.5"
+                        android:text="Tanggal Kejadian"
+                        android:textColor="@android:color/black"
+                        android:textSize="13dp" />
 
-                    <Button
-                        android:id="@+id/donasi_barang"
+                    <TextView
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/button_submit"
-                        android:drawableLeft="@drawable/box"
-                        android:onClick="donasiBarang"
-                        android:paddingLeft="20dp"
-                        android:text="Donasi Barang"
-                        android:textColor="@color/whiteTextColor" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:text=":" />
+
+                    <EditText
+                        android:id="@+id/tgl_kejadian"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:textAlignment="center"
+                        android:textSize="14dp" />
+
+                    <!--                <TextView-->
+                    <!--                    android:id="@+id/nama_relawan"-->
+                    <!--                    android:layout_width="0dp"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_weight="1.8"-->
+                    <!--                    android:text="TextView"-->
+                    <!--                    android:textColor="@android:color/black" />-->
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:text="Lokasi Bencana"
+                        android:textColor="@android:color/black"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:text=":" />
+
+                    <EditText
+                        android:id="@+id/lokasi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:textAlignment="center"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/TVTgl_donasi"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:text="Batas Akhir Donasi"
+                        android:textColor="@android:color/black"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:text=":" />
+
+                    <EditText
+                        android:id="@+id/deadline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:textAlignment="center"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/TVketerangan"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:text="Nama Relawan"
+                        android:textColor="@android:color/black"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:text=":" />
+
+                    <EditText
+                        android:id="@+id/nama_relawan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:textAlignment="center"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#000"></RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/detailBencana"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:background="#2ca545"
+                        android:drawableLeft="@drawable/search"
+                        android:onClick="detailBencana"
+                        android:paddingLeft="10dp"
+                        android:text="Detail Bencana"
+                        android:textColor="@color/whiteTextColor"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/tv_file_path"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Pilih Tipe Donasi"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/donasi_uang"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_submit"
+                            android:drawableLeft="@drawable/rupiah"
+                            android:onClick="donasiUang"
+                            android:paddingLeft="20dp"
+                            android:text="Donasi Uang"
+                            android:textColor="@color/whiteTextColor" />
+
+                        <Button
+                            android:id="@+id/donasi_barang"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_submit"
+                            android:drawableLeft="@drawable/box"
+                            android:onClick="donasiBarang"
+                            android:paddingLeft="20dp"
+                            android:text="Donasi Barang"
+                            android:textColor="@color/whiteTextColor" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:background="#000"></RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:text="Donasi Terakhir"
+                    android:textColor="@color/blackTextColor"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_view"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:clipToPadding="false"
+                android:scrollbars="vertical" />
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
     <TextView
         android:id="@+id/id_bencana"
@@ -301,5 +330,4 @@
         android:text="TextView"
         android:textColor="#00FFFFFF"
         android:visibility="gone" />
-
 </RelativeLayout>

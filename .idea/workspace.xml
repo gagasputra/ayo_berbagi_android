@@ -12,7 +12,29 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e501eb98-e17b-4597-b4d5-b2c9601ef4e5" name="Default Changelist" comment="" />
+    <list default="true" id="e501eb98-e17b-4597-b4d5-b2c9601ef4e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/adapter/AdapterDonasiTerkini.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/donasi_terkini.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/config/config.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/config/config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/Donasi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/Donasi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/DonasiUang.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/DonasiUang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/model/DonasiModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/model/DonasiModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/fragment/DProsesRelawan.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/fragment/DProsesRelawan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_donasi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_donasi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/donasi_baru.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/donasi_baru.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,16 +72,21 @@
       <list>
         <option value="layoutResourceFile_vertical" />
         <option value="valueResourceFile" />
+        <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="Class" />
-        <option value="resourceFile" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YYX9zgJ0qcJXteHGv1Q4EnxZwV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="1272598e" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-10T17:28:59.121Z" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
@@ -69,17 +96,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.ayoberbagi_mysql.config" />
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.example.ayoberbagi_mysql" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Kuliah\Android\AyoBerbagi_MySQL\app\src\main\res\drawable" />
-      <recent name="E:\Kuliah\Android\AyoBerbagi_MySQL\app\src\main\res" />
-      <recent name="E:\Kuliah\Android\AyoBerbagi_MySQL\app\src\main\res\drawable-v24" />
-      <recent name="E:\Kuliah\Android\AyoBerbagi_MySQL\app\src\main\res\layout" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.example.ayoberbagi_mysql" />
@@ -90,11 +111,17 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.ayoberbagi_mysql" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Kuliah\Android\AyoBerbagi_MySQL\app\src\main\res\drawable" />
+      <recent name="E:\Kuliah\Android\AyoBerbagi_MySQL\app\src\main\res" />
+      <recent name="E:\Kuliah\Android\AyoBerbagi_MySQL\app\src\main\res\drawable-v24" />
+      <recent name="E:\Kuliah\Android\AyoBerbagi_MySQL\app\src\main\res\layout" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.ayoberbagi_mysql" />
     </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.ayoberbagi_mysql.config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -191,6 +218,19 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -220,11 +260,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/Donasi.java</url>
-          <line>113</line>
+          <line>131</line>
           <properties class="com.example.ayoberbagi_mysql.donatur.Donasi" method="notif">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/Donasi.java</url>
+          <line>176</line>
+          <properties class="com.example.ayoberbagi_mysql.donatur.Donasi" method="donasiBarang">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/config/BottomNavigationBehavior.java</url>
@@ -243,7 +291,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/fragment/DProsesRelawan.java</url>
-          <line>67</line>
+          <line>68</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
