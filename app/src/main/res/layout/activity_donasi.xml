@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:paddingLeft="5dp"
+    android:paddingTop="10dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nama_bencana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/thumbnail"
+            android:text="Nama Bencana"
+            android:textAlignment="center"
+            android:textColor="#040404"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#000"></RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Pilih Nominal Donasi"
+            android:textAlignment="center"
+            android:textColor="#040404"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:padding="10dp"
+                    android:background="@drawable/radbutton"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/RB10k"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Rp10.000"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:padding="10dp"
+                    android:background="@drawable/radbutton"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/RB20k"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Rp20.000"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/RB50k"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:padding="10dp"
+                    android:background="@drawable/radbutton"
+                    android:text="Rp50.000"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:padding="10dp"
+                    android:background="@drawable/radbutton"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/RB100k"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Rp100.000"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/RBlain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Nominal Lainnya"
+                    android:textSize="16dp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="Rp"
+                    android:textColor="@color/blackTextColor"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/ETnominal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:enabled="false"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="#000"></RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/donasi_uang"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_submit"
+                    android:onClick="addDonasi"
+                    android:text="Donasi"
+                    android:textColor="@color/whiteTextColor"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/id_bencana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:text="TextView"
+        android:textColor="#00FFFFFF"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/id_donatur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:text="TextView"
+        android:textColor="#00FFFFFF"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ayoberbagi_mysql.donatur.fragment.ProfileFragment">
+
+    <ImageView
+        android:id="@+id/foto"
+        android:layout_width="154dp"
+        android:layout_height="137dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/nama_relawan"
+        android:layout_width="100dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:text="Nama Donatur" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_submit"
+        android:text="Logout" />
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_berita"
+        android:icon="@drawable/ic_news"
+        android:title="@string/title_berita" />
+
+    <item
+        android:id="@+id/navigation_proses"
+        android:icon="@drawable/ic_proses"
+        android:title="@string/title_proses" />
+
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_history"
+        android:title="@string/title_history" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_account"
+        android:title="@string/title_account"
+        app:showAsAction="always" />
+
+</menu>

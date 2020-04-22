@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <view
+        android:id="@+id/jumlah_donatur"
+        class="androidx.cardview.widget.CardView"
+        android:layout_width="163dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rectanglebg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tgl_kejadian">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/team"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="154dp" />
+
+        <TextView
+            android:id="@+id/tv_jumlahdonatur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView2"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_gravity="center"
+            android:text="JUMLAH DONATUR"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="326dp" />
+
+        <TextView
+            android:id="@+id/jumlahdonatur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView2"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="30dp"
+            android:textSize="25dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="326dp" />
+        <TextView
+            android:id="@+id/tv_donatur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView2"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="10dp"
+            android:text="Donatur"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="326dp" />
+    </view>
+
+    <view
+        android:id="@+id/total_donasi"
+        class="androidx.cardview.widget.CardView"
+        android:layout_width="163dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/rectanglebg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tgl_kejadian">
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/money"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+    <TextView
+        android:id="@+id/tv_totaldonasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_gravity="center"
+        android:text="TOTAL DONASI"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <TextView
+        android:id="@+id/totaldonasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="30dp"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="326dp" />
+    <TextView
+        android:id="@+id/tv_donasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="10dp"
+        android:text="Rupiah"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="326dp" />
+    </view>
+
+    <view
+        android:id="@+id/donasi_diterima"
+        class="androidx.cardview.widget.CardView"
+        android:layout_width="163dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rectanglebg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jumlah_donatur">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/check"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+    <TextView
+        android:id="@+id/tv_donasiditerima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_gravity="center"
+        android:text="DONASI DITERIMA"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <TextView
+        android:id="@+id/donasiditerima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="30dp"
+        android:textSize="25dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="326dp" />
+    <TextView
+        android:id="@+id/tv_diterima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="10dp"
+        android:text="Rupiah"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+
+    </view>
+
+    <view
+        android:id="@+id/donasi_proses"
+        class="androidx.cardview.widget.CardView"
+        android:layout_width="163dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/rectanglebg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_donasi">
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/loading"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="154dp" />
+
+        <TextView
+            android:id="@+id/tv_donasiproses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView2"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_gravity="center"
+            android:text="DONASI DIPROSES"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="326dp" />
+
+        <TextView
+            android:id="@+id/donasiproses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView2"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="30dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="326dp" />
+        <TextView
+            android:id="@+id/tv_proses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView2"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="10dp"
+            android:text="Rupiah"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="326dp" />
+    </view>
+
+    <TextView
+        android:id="@+id/nama_bencana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tgl_kejadian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nama_bencana" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ayoberbagi_mysql">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".config.Controller"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".donatur.EditProfile"
+            android:label="Edit Profile"></activity>
+        <activity
+            android:name=".donatur.DonasiBarang"
+            android:label="Donasi Barang"></activity>
+        <activity android:name=".relawan.R_DetailDonasi" />
+        <activity android:name=".donatur.UploadBukti" />
+        <activity
+            android:name=".donatur.DetailDProses"
+            android:label="Detail Donasi" />
+        <activity android:name=".donatur.DonasiHistory" />
+        <activity
+            android:name=".donatur.ProfileActivity"
+            android:label="Profile" />
+        <activity
+            android:name=".donatur.Berita"
+            android:label="Berita" />
+        <activity android:name=".donatur.fragment.HistoryFragment" />
+        <activity android:name=".donatur.ProcessedFragment" />
+        <activity android:name=".donatur.DetailDBarang"
+            android:label="Detail Donasi"/>
+        <activity
+            android:name=".donatur.Donasi"
+            android:label="Bencana" />
+        <activity
+            android:name=".donatur.DonasiUang"
+            android:label="Donasi Uang" />
+        <activity
+            android:name=".Register"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".relawan.ActivityRelawan"
+            android:label="Relawan"
+            android:theme="@style/AppThemeRelawan" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".donatur.MainActivity" />
+
+        <receiver
+            android:name=".config.NotificationReceiver"
+            android:exported="false" />
+    </application>
+
+</manifest>

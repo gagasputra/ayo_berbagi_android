@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="button_login">#2196F3</color>
+    <color name="dark_grey">#A9A9A9</color>
+    <color name="link">#0000EE</color>
+
+
+
+    <color name="utama">#7b4bff</color>
+    <color name="utamaGelap">#6539ba</color>
+    <color name="aksen">#FF4081</color>
+    <color name="bgBottomNavigation">#2196F3</color>
+
+    <color name="bgBottomNavigationRelawan">#003159</color>
+
+    //Button
+    <color name="button_normal">#03A9F4</color>
+    <color name="button_pressed">#2196F3</color>
+
+    <color name="statusbar">#A9A9A9</color>
+    <color name="bg_login">#FFFAFA</color>
+
+    <!--colors for profile-->
+    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profileAccentColor">#F7F7F7</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="profileBackground">#fff</color>
+    <color name="blackTextColor">#000</color>
+    <color name="profileEditTextColor">#707070</color>
+
+</resources>

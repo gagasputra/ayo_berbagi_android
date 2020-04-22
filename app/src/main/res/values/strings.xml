@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">AyoBerbagi</string>
+    <string name="create_account"><font color="#00ff00">text</font></string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="back_to_login">Kembali Ke Login</string>
+    <string name="todo">Invalid username or password</string>
+
+    <string name="upload_bukti">Upload Bukti Transfer</string>
+
+    <!--    <string name="invalid"> Invalid username or password </string>-->
+
+    <string name="title_home">Home</string>
+    <string name="title_proses">Proses</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_account">Profile</string>
+    <string name="title_berita">Berita</string>
+
+    <string name="donasi_barang"> Untuk donasi barang, dapat menekan link berikut. </string>>
+
+    <string name="notifikasi">Anda telah melakukan donasi, silahkan lanjutkan ke proses pembayaran</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_berita">Berita</string>
+    <string name="permission_read_external_storage" />
+    <string name="invalid">Invalid username or password</string>
+
+    <string name="title_activity_profile">Profile</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="donasiBarang">
+        <item>Pakaian</item>
+        <item>Selimut</item>
+        <item>Buku</item>
+        <item>Sembako</item>
+        <item>Makanan / Minuman</item>
+        <item>Peralatan Medis / Obat-obatan</item>
+        <item>Mainan</item>
+        <item>Peralatan Rumah Tangga</item>
+    </string-array>
+
+    <string-array name="tipeDonatur">
+        <item>Perorangan</item>
+        <item>Kelompok</item>
+        <item>Perusahaan</item>
+    </string-array>
+
+
+</resources>

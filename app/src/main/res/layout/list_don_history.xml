@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="10dp" >
+
+    <!--  ListRow Left sied Thumbnail image -->
+    <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/image_bg"
+        android:layout_marginRight="10dp">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/list_image"
+            android:layout_width="100dp"
+            android:scaleType="fitXY"
+            android:layout_height="100dp"/>
+
+    </LinearLayout>
+
+    <!-- Title Of Song-->
+    <TextView
+        android:id="@+id/nama_bencana"
+        android:layout_width="256dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Nama Bencana"
+        android:textColor="#040404"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <!-- Artist Name -->
+
+    <!-- Rightend Duration -->
+
+    <!-- Rightend Arrow -->
+
+    <TextView
+        android:id="@+id/nama_relawan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txt_nama_relawan"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/txt_nama_relawan"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Nama Relawan"
+        android:textColor="#343434"
+        android:textSize="10dip" />
+
+    <TextView
+        android:id="@+id/txt_nama_relawan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nama_bencana"
+        android:layout_alignStart="@+id/nama_bencana"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Relawan :"
+        android:textColor="#343434"
+        android:textSize="10dip" />
+
+    <TextView
+        android:id="@+id/txt_waktu_diterima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_nama_relawan"
+        android:layout_alignStart="@+id/nama_bencana"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Tanggal Diterima :"
+        android:textColor="#343434"
+        android:textSize="10dip" />
+
+    <TextView
+        android:id="@+id/waktu_diterima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nama_relawan"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/txt_waktu_diterima"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Tanggal Diterima"
+        android:textColor="#343434"
+        android:textSize="10dip" />
+
+    <TextView
+        android:id="@+id/nominal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_totaldonasi"
+        android:layout_alignStart="@+id/txt_totaldonasi"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Donasi"
+        android:textColor="#343434"
+        android:textSize="10dip" />
+
+    <TextView
+        android:id="@+id/txt_totaldonasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_waktu_diterima"
+        android:layout_alignStart="@+id/txt_waktu_diterima"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Nominal"
+        android:textColor="#343434"
+        android:textSize="10dip" />
+
+    <TextView
+        android:id="@+id/txt_totaldonasi2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txt_totaldonasi"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="157dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/txt_totaldonasi"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Keterangan"
+        android:textColor="#343434"
+        android:textSize="10dip" />
+
+    <TextView
+        android:id="@+id/keterangan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_totaldonasi2"
+        android:layout_alignStart="@+id/txt_totaldonasi2"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="175dp"
+        android:gravity="right"
+        android:text="Deadline"
+        android:textColor="#10bcc9"
+        android:textSize="10dip"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/arrow"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>
