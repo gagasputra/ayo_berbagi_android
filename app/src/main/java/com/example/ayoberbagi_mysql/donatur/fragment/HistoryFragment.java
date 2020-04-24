@@ -24,12 +24,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.ayoberbagi_mysql.donatur.model.DonasiHistoryModel;
-import com.example.ayoberbagi_mysql.donatur.model.DonaturModel;
-import com.example.ayoberbagi_mysql.config.Preferences;
 import com.example.ayoberbagi_mysql.R;
+import com.example.ayoberbagi_mysql.config.Preferences;
 import com.example.ayoberbagi_mysql.config.config;
 import com.example.ayoberbagi_mysql.donatur.adapter.AdapterViewDHistory;
+import com.example.ayoberbagi_mysql.donatur.model.DonasiProsesModel;
+import com.example.ayoberbagi_mysql.donatur.model.DonaturModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,7 +47,7 @@ public class HistoryFragment extends Fragment {
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mManager;
     ProgressDialog pd;
-    ArrayList<DonasiHistoryModel> mItems;
+    ArrayList<DonasiProsesModel> mItems;
     TextView tv_donasi_history;
 
     String id, username;
@@ -105,7 +105,7 @@ public class HistoryFragment extends Fragment {
                                 for (int i = 0; i < data.length(); i++) {
 
                                     JSONObject hasil = data.getJSONObject(i);
-                                    DonasiHistoryModel dhm = new DonasiHistoryModel();
+                                    DonasiProsesModel dhm = new DonasiProsesModel();
                                     dhm.setId_donasi(hasil.getString("id_donasi"));
                                     dhm.setId_donatur(hasil.getString("id_donatur"));
                                     dhm.setNama_bencana(hasil.getString("nama_bencana"));
@@ -116,6 +116,19 @@ public class HistoryFragment extends Fragment {
                                     dhm.setUpload_path(hasil.getString("upload_path"));
                                     dhm.setFoto(config.URL_GAMBAR + hasil.getString("foto"));
                                     dhm.setKeterangan(hasil.getString("keterangan"));
+                                    dhm.setFoto(hasil.getString("foto"));
+                                    dhm.setJumlah_total(hasil.getString("jumlah_total"));
+                                    dhm.setPath_foto(hasil.getString("path_foto"));
+                                    dhm.setJml_pakaian(hasil.getString("jml_pakaian"));
+                                    dhm.setJml_selimut(hasil.getString("jml_selimut"));
+                                    dhm.setJml_buku(hasil.getString("jml_buku"));
+                                    dhm.setJml_sembako(hasil.getString("jml_sembako"));
+                                    dhm.setJml_makan_minum(hasil.getString("jml_makan_minum"));
+                                    dhm.setJml_medis_obat(hasil.getString("jml_medis_obat"));
+                                    dhm.setJml_mainan(hasil.getString("jml_mainan"));
+                                    dhm.setJml_alat_rt(hasil.getString("jml_alat_rt"));
+                                    dhm.setBarang_lain(hasil.getString("barang_lain"));
+                                    dhm.setJml_lain(hasil.getString("jml_lain"));
 
                                     mItems.add(dhm);
                                 }

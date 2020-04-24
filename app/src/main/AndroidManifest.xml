@@ -30,7 +30,8 @@
         <activity
             android:name=".donatur.DetailDProses"
             android:label="Detail Donasi" />
-        <activity android:name=".donatur.DonasiHistory" />
+        <activity android:name=".donatur.DonasiHistory"
+            android:label="Detail Donasi"/>
         <activity
             android:name=".donatur.ProfileActivity"
             android:label="Profile" />

@@ -17,16 +17,16 @@ import com.example.ayoberbagi_mysql.R;
 import com.example.ayoberbagi_mysql.config.ImageAdapter;
 import com.example.ayoberbagi_mysql.config.config;
 import com.example.ayoberbagi_mysql.donatur.DonasiHistory;
-import com.example.ayoberbagi_mysql.donatur.model.DonasiHistoryModel;
+import com.example.ayoberbagi_mysql.donatur.model.DonasiProsesModel;
 
 import java.util.ArrayList;
 
 public class AdapterViewDHistory extends RecyclerView.Adapter<AdapterViewDHistory.ViewDHistoryHolder> {
     Context context;
-    private ArrayList<DonasiHistoryModel> item;
+    private ArrayList<DonasiProsesModel> item;
     ImageLoader imageLoader;
 
-    public AdapterViewDHistory(Context context, ArrayList<DonasiHistoryModel> item){
+    public AdapterViewDHistory(Context context, ArrayList<DonasiProsesModel> item){
         this.context = context;
         this.item = item;
     }
@@ -41,7 +41,7 @@ public class AdapterViewDHistory extends RecyclerView.Adapter<AdapterViewDHistor
 
     @Override
     public void onBindViewHolder(@NonNull ViewDHistoryHolder holder, final int position) {
-        final DonasiHistoryModel model = item.get(position);
+        final DonasiProsesModel model = item.get(position);
         holder.nama_bencana.setText(model.getNama_bencana());
         holder.nama_relawan.setText(model.getNama());
         String Tnominal = model.getNominal();
@@ -83,6 +83,19 @@ public class AdapterViewDHistory extends RecyclerView.Adapter<AdapterViewDHistor
                 i.putExtra("waktu_diterima", model.getWaktu_diterima());
                 i.putExtra("nominal", model.getNominal());
                 i.putExtra("upload_path", model.getUpload_path());
+                i.putExtra("foto", model.getFoto());
+                i.putExtra("jumlah_total", model.getJumlah_total());
+                i.putExtra("path_foto", model.getPath_foto());
+                i.putExtra("jml_pakaian", model.getJml_pakaian());
+                i.putExtra("jml_selimut", model.getJml_selimut());
+                i.putExtra("jml_buku", model.getJml_buku());
+                i.putExtra("jml_sembako", model.getJml_sembako());
+                i.putExtra("jml_makan_minum", model.getJml_makan_minum());
+                i.putExtra("jml_medis_obat", model.getJml_medis_obat());
+                i.putExtra("jml_mainan", model.getJml_mainan());
+                i.putExtra("jml_alat_rt", model.getJml_alat_rt());
+                i.putExtra("barang_lain", model.getBarang_lain());
+                i.putExtra("jml_lain", model.getJml_lain());
 
                 context.startActivity(i);
             }

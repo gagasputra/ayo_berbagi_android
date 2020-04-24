@@ -42,7 +42,7 @@ public class DetailDProses extends AppCompatActivity {
 
 
     EditText nama_relawan, nominal, keterangan, tanggal_donasi;
-    TextView id_donasi, id_bencana, nama_bencana, TV_nominal, tv_file_path, CB9;
+    TextView id_donasi, id_bencana, nama_bencana, TV_nominal, tv_file_path, CB9, Tjumlah_total;
     ImageView bukti, foto;
     Button detailDonasi;
     Context context;
@@ -51,7 +51,7 @@ public class DetailDProses extends AppCompatActivity {
     EditText ETnominal;
 
     String Tkategori, Tnominal, Tketerangan;
-    String Tcb1, Tcb2, Tcb3, Tcb4, Tcb5, Tcb6, Tcb7, Tcb8, Tcb9, upload_path, Tet9, path_foto;
+    String Tcb1, Tcb2, Tcb3, Tcb4, Tcb5, Tcb6, Tcb7, Tcb8, Tcb9, upload_path, Tet9, path_foto, jumlah_total;
     EditText ET1, ET2, ET3, ET4, ET5, ET6, ET7, ET8, ET9;
 
     Intent intent;
@@ -98,6 +98,8 @@ public class DetailDProses extends AppCompatActivity {
         Tcb9 = intent.getStringExtra("barang_lain");
         Tet9 = intent.getStringExtra("jml_lain");
         path_foto = intent.getStringExtra("path_foto");
+        jumlah_total = intent.getStringExtra("jumlah_total");
+
 
         if (Tnominal.equalsIgnoreCase("null")) {
             nominal.setText(("- (Donasi Barang)"));
@@ -178,6 +180,7 @@ public class DetailDProses extends AppCompatActivity {
         detailDonasi = (Button) findViewById(R.id.detailDonasi);
         TV_nominal = findViewById(R.id.textView6);
         nama_bencana = findViewById(R.id.nama_bencana);
+        Tjumlah_total = findViewById(R.id.jumlah_total);
     }
 
     public boolean upload_bukti(View view) {
@@ -247,6 +250,7 @@ public class DetailDProses extends AppCompatActivity {
         ET8 = dialogView.findViewById(R.id.et8);
         ET9 = dialogView.findViewById(R.id.et9);
         CB9 = dialogView.findViewById(R.id.cb9);
+        Tjumlah_total = dialogView.findViewById(R.id.jumlah_total);
         ET1.setText(Tcb1);
         ET2.setText(Tcb2);
         ET3.setText(Tcb3);
@@ -256,6 +260,7 @@ public class DetailDProses extends AppCompatActivity {
         ET7.setText(Tcb7);
         ET8.setText(Tcb8);
         ET9.setText(Tet9);
+        Tjumlah_total.setText(jumlah_total);
         if(Tcb9.equalsIgnoreCase("-")){
             CB9.setText("Barang Lainnya");
         } else {

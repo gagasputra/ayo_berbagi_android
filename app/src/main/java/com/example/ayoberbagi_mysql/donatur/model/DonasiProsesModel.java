@@ -3,7 +3,7 @@ package com.example.ayoberbagi_mysql.donatur.model;
 public class DonasiProsesModel {
     String id_donasi, id_bencana, id_donatur, kategori, jumlah, id_pj, nama_bencana, lokasi, nama, no_rek, nominal, waktu_donasi, bukti, upload_path, konfirmasi, keterangan,
             id_donasi_barang, jumlah_total, foto, path_foto, jml_pakaian, jml_selimut, jml_buku, jml_sembako, jml_makan_minum,
-            jml_medis_obat, jml_mainan, jml_alat_rt, barang_lain, jml_lain;
+            jml_medis_obat, jml_mainan, jml_alat_rt, barang_lain, jml_lain, waktu_diterima;
 
     public DonasiProsesModel() {
         this.id_donasi = id_donasi;
@@ -36,6 +36,15 @@ public class DonasiProsesModel {
         this.jml_alat_rt = jml_alat_rt;
         this.barang_lain = barang_lain;
         this.jml_lain = jml_lain;
+        this.waktu_diterima = waktu_diterima;
+    }
+
+    public String getWaktu_diterima() {
+        return waktu_diterima;
+    }
+
+    public void setWaktu_diterima(String waktu_diterima) {
+        this.waktu_diterima = waktu_diterima;
     }
 
     public String getId_donasi() {
