@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "218930149076",
+    "firebase_url": "https://ayoberbagi-98283.firebaseio.com",
+    "project_id": "ayoberbagi-98283",
+    "storage_bucket": "ayoberbagi-98283.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218930149076:android:ee230cc89768770fb1ad41",
+        "android_client_info": {
+          "package_name": "com.example.ayoberbagi_mysql"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218930149076-668fduvg2f83b64q7ftkcs5lon5du329.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWcarvRZfw4e8t2VSSYjrLhQ0qticzYVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218930149076-668fduvg2f83b64q7ftkcs5lon5du329.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
