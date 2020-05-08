@@ -150,9 +150,8 @@ public class DonasiUang extends AppCompatActivity {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            JSONObject user = null;
                             try {
-                                user = new JSONObject(response);
+                                JSONObject user = new JSONObject(response);
                                 if (user.getString("akses").equals("update")) {
                                     Toast.makeText(context, "Mohon Lengkapi Profile Sebelum Donasi", Toast.LENGTH_LONG).show();
                                     Intent i = new Intent(DonasiUang.this, ProfileActivity.class);

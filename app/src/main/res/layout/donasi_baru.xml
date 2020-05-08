@@ -232,19 +232,40 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/detailBencana"
-                        android:layout_width="160dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:background="#2ca545"
-                        android:drawableLeft="@drawable/search"
-                        android:onClick="detailBencana"
-                        android:paddingLeft="10dp"
-                        android:text="Detail Bencana"
-                        android:textColor="@color/whiteTextColor"
-                        android:textStyle="bold" />
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/detailBencana"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_info"
+                            android:drawableLeft="@drawable/search"
+                            android:onClick="detailBencana"
+                            android:paddingLeft="20dp"
+                            android:text="Detail Bencana"
+                            android:textColor="@color/whiteTextColor" />
+
+                        <Button
+                            android:id="@+id/infoRelawan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_info"
+                            android:drawableLeft="@drawable/search"
+                            android:onClick="infoRelawan"
+                            android:paddingLeft="20dp"
+                            android:text="Info Relawan"
+                            android:textColor="@color/whiteTextColor" />
+                    </LinearLayout>
 
 
                     <TextView
@@ -295,24 +316,28 @@
 
                 </LinearLayout>
             </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:layout_marginBottom="5dp"
                 android:background="#000"></RelativeLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
                     android:text="Donasi Terakhir"
-                    android:textColor="@color/blackTextColor"/>
+                    android:textColor="@color/blackTextColor"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
             </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycle_view"
                 android:layout_width="match_parent"

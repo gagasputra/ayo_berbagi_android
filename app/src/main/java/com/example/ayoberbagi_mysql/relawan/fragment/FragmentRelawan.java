@@ -94,12 +94,14 @@ public class FragmentRelawan extends Fragment {
 
 //                            JSONArray jsonArray = user.getJSONArray(response);
                             if(response.equalsIgnoreCase("null")){
-                                tv_nama_bencana.setText("Tidak Ada Bencana");
+                                tv_nama_bencana.setText("Tidak Ada Bencana Aktif");
                                 tv_tgl_kejadian.setText("-");
                                 tv_jumlahdonatur.setText("0");
                                 tv_total_donasi.setText("0");
                                 tv_donasi_diterima.setText("0");
                                 tv_donasi_diproses.setText("0");
+                                jumlah_diterima.setText("0");
+                                jumlah_diproses.setText("0");
                             } else {
                                 JSONObject user = new JSONObject(response);
                                 tv_nama_bencana.setText(user.getString("nama_bencana"));

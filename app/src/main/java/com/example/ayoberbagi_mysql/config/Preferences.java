@@ -97,4 +97,12 @@ public class Preferences {
         editor.clear();
         editor.commit();
     }
+
+    public void saveData(String uname){
+        settings = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        editor = settings.edit();
+        editor.putString("username", uname);
+
+        editor.apply();
+    }
 }

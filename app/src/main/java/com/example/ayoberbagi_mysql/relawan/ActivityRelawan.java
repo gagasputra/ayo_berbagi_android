@@ -2,6 +2,7 @@ package com.example.ayoberbagi_mysql.relawan;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -14,11 +15,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.ayoberbagi_mysql.R;
 import com.example.ayoberbagi_mysql.config.BottomNavigationBehavior;
-import com.example.ayoberbagi_mysql.donatur.fragment.BeritaFragment;
 import com.example.ayoberbagi_mysql.relawan.fragment.DDiterimaRelawan;
 import com.example.ayoberbagi_mysql.relawan.fragment.DProsesRelawan;
+import com.example.ayoberbagi_mysql.relawan.fragment.FragmentDistribusi;
 import com.example.ayoberbagi_mysql.relawan.fragment.FragmentRelawan;
-import com.example.ayoberbagi_mysql.relawan.fragment.ProfileRelawan;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ActivityRelawan extends AppCompatActivity {
@@ -60,24 +60,23 @@ public class ActivityRelawan extends AppCompatActivity {
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_berita:
-                    toolbar.setTitle("Berita");
-                    fragment = new BeritaFragment();
+                    toolbar.setTitle("Distribusi Donasi");
+                    fragment = new FragmentDistribusi();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_proses:
-                    toolbar.setTitle("Donation Processed");
+                    toolbar.setTitle("Donation Diproses");
                     fragment = new DProsesRelawan();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_history:
-                    toolbar.setTitle("Donation Accepted");
+                    toolbar.setTitle("Donation Diterima");
                     fragment = new DDiterimaRelawan();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_profile:
-                    toolbar.setTitle("Profile");
-                    fragment = new ProfileRelawan();
-                    loadFragment(fragment);
+                    Intent i = new Intent(ActivityRelawan.this, RelawanProfile.class);
+                    startActivity(i);
                     return true;
             }
             return false;

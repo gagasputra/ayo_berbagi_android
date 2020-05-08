@@ -3,6 +3,8 @@ package com.example.ayoberbagi_mysql.donatur;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,6 +40,7 @@ import com.example.ayoberbagi_mysql.config.config;
 import com.example.ayoberbagi_mysql.donatur.adapter.AdapterDonasiTerkini;
 import com.example.ayoberbagi_mysql.donatur.model.DonasiModel;
 import com.example.ayoberbagi_mysql.donatur.model.DonaturModel;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,15 +56,17 @@ public class Donasi extends AppCompatActivity {
     EditText ETtgl_kejadian, ETlokasi, ETdeadline, ETnama_relawan;
 
     EditText DETtgl_kejadian, DETlokasi, DETdeskripsi, DETjml_korban, DETkerugian, DETbatas_akhir, DETnama_relawan;
-    ImageView gambar, gambar2, gambar3;
+    ImageView gambar, gambar2, gambar3, foto, copy_rekening, copy_alamat;
     Context context;
 
     private ImageLoader imageLoader;
     EditText ETnominal;
 
-    String Tid_bencana, Tnama_bencana, Ttgl_kejadian, Tlokasi, Tdeskripsi, Tjml_korban, Tkerugian, Tbatas_akhir, Tnama_relawan;
+    String userImg, Tid_bencana, Tnama_bencana, Ttgl_kejadian, Tlokasi, Tdeskripsi, Tjml_korban, Tkerugian, Tbatas_akhir, Tnama_relawan;
+    EditText ETDnama_relawan, ETDno_ktp, ETDalamat, ETDtelp, ETDnama_bank, ETDnorek;
 
     Intent intent;
+    Button infoRelawan;
     ArrayList<DonaturModel> item;
     AlertDialog.Builder dialog;
     LayoutInflater inflater;
@@ -119,6 +125,63 @@ public class Donasi extends AppCompatActivity {
 
         ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.flipperid);
         viewFlipper.startFlipping();
+
+        infoRelawan = findViewById(R.id.infoRelawan);
+        infoRelawan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadInfo();
+                dialogRelawan();
+
+            }
+        });
+    }
+
+    public void loadInfo(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, config.URL_INFO_RELAWAN,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            Log.d("berhasil", "Response: " + response);
+                            JSONObject user = new JSONObject(response);
+
+                            ETDnama_relawan.setText(user.getString("nama"));
+                            ETDno_ktp.setText(user.getString("no_identitas"));
+                            ETDalamat.setText(user.getString("alamat"));
+                            ETDtelp.setText(user.getString("telp"));
+                            ETDnama_bank.setText(user.getString("nama_bank"));
+                            ETDnorek.setText(user.getString("no_rek"));
+                            userImg = user.getString("foto");
+                            setProfileImage(config.URL_KOSONGAN + userImg);
+                            Log.d("response", "berhasil " + response);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //You can handle error here if you want
+                        Toast.makeText(context, "The server unreachable error", Toast.LENGTH_LONG).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Preferences pref = new Preferences(getApplicationContext());
+                DonaturModel dm = pref.getUserSession();
+                Map<String, String> params = new HashMap<>();
+                //Adding parameters to request
+                params.put("id_pj", intent.getStringExtra("id_pj"));
+                //returning parameter
+                return params;
+            }
+        };
+        //Adding the string request to the queue
+        Volley.newRequestQueue(this).add(stringRequest);
     }
 
     public PendingIntent getLaunchIntent(int notificationId, Context context) {
@@ -352,6 +415,24 @@ public class Donasi extends AppCompatActivity {
         DETnama_relawan.setText(Tnama_relawan);
         nama_bencana.setText(intent.getStringExtra("nama_bencana"));
 
+        dialog.setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    public void dialogRelawan() {
+        dialog = new AlertDialog.Builder(Donasi.this);
+        inflater = getLayoutInflater();
+        dialogView = inflater.inflate(R.layout.info_relawan, null);
+        dialog.setView(dialogView);
+        dialog.setCancelable(true);
+
         dialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
 
             @Override
@@ -361,6 +442,39 @@ public class Donasi extends AppCompatActivity {
         });
 
         dialog.show();
+        ETDnama_relawan = dialogView.findViewById(R.id.ETnama_relawan);
+        ETDno_ktp = dialogView.findViewById(R.id.ETnoKTP);
+        ETDalamat = dialogView.findViewById(R.id.ETalamat);
+        ETDtelp = dialogView.findViewById(R.id.ETtelp);
+        ETDnama_bank = dialogView.findViewById(R.id.ETnama_bank);
+        ETDnorek = dialogView.findViewById(R.id.ETnorek);
+        foto = dialogView.findViewById(R.id.foto);
+        copy_rekening = dialogView.findViewById(R.id.copy_rekening);
+        copy_alamat = dialogView.findViewById(R.id.copy_alamat);
+
+        copy_rekening.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("copy_rekening", ETDnorek.getText().toString());
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(context, "No. rekening berhasil disalin", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        copy_alamat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("copy_alamat", ETDalamat.getText().toString());
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(context, "Alamat berhasil disalin", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void setProfileImage(String imgUrl) {
+        Picasso.get().load(imgUrl).into(foto);
     }
 
     public void loadjson() {

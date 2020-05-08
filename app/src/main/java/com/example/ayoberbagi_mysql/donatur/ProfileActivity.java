@@ -1,7 +1,6 @@
 package com.example.ayoberbagi_mysql.donatur;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -59,8 +58,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.profil);
         Intent i = getIntent();
 
-//        btn_logout = findViewById(R.id.btn_logout);
-        sp = getSharedPreferences("sp", Context.MODE_PRIVATE);
+
 
         id = i.getStringExtra(config.TAG_ID);
 //        username = i.getStringExtra(config.TAG_USERNAME);
@@ -75,6 +73,10 @@ public class ProfileActivity extends AppCompatActivity {
         foto = findViewById(R.id.foto);
 
         imageLoader = ImageAdapter.getInstance(this).getImageLoader();
+        Preferences pref = new Preferences(getApplicationContext());
+        DonaturModel donaturModel = pref.getUserSession();
+        username = donaturModel.getUsername();
+        txt_username.setText("@" + username);
         setToView();
 
 //        btn_logout.setOnClickListener(new View.OnClickListener() {
@@ -153,8 +155,6 @@ public class ProfileActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<>();
                 Preferences pref = new Preferences(getApplicationContext());
                 DonaturModel donaturModel = pref.getUserSession();
-                username = donaturModel.getUsername();
-                txt_username.setText("@" + username);
                 //Adding parameters to request
                 params.put(config.KEY_ID_DONATUR, donaturModel.getIdDonatur());
                 //returning parameter
@@ -214,6 +214,17 @@ public class ProfileActivity extends AppCompatActivity {
         i.putExtra("nohp", txt_nohp.getText());
         i.putExtra("alamat", txt_alamat.getText());
         i.putExtra("foto", userImg);
+        startActivity(i);
+        Log.d("intent", "intent: " + donaturModel.getIdDonatur());
+        return true;
+    }
+
+    public boolean editAkun(MenuItem item) {
+        Preferences pref = new Preferences(getApplicationContext());
+        DonaturModel donaturModel = pref.getUserSession();
+        Intent i = new Intent(ProfileActivity.this, EditAkun.class);
+        i.putExtra("id_donatur", donaturModel.getIdDonatur());
+        i.putExtra("username", txt_username.getText());
         startActivity(i);
         Log.d("intent", "intent: " + donaturModel.getIdDonatur());
         return true;

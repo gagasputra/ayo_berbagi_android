@@ -31,7 +31,7 @@ import java.util.Map;
 
 public class R_DetailDonasi extends AppCompatActivity {
 
-    TextView id_bencana, nama_donatur, nominal , waktu_donasi, kategori, jumlah;
+    TextView id_bencana, nama_donatur, nominal, waktu_donasi, kategori, jumlah;
     ImageView bukti;
     Context context;
     Button terimaDonasi, tolakDonasi;
@@ -56,19 +56,24 @@ public class R_DetailDonasi extends AppCompatActivity {
 
         id_bencana.setText(intent.getStringExtra("id_bencana"));
         nama_donatur.setText(intent.getStringExtra("nama_donatur"));
-        nominal.setText(intent.getStringExtra("nominal")+",00");
+        String Tnominal = intent.getStringExtra("nominal");
+        if (Tnominal.equalsIgnoreCase("null")) {
+            nominal.setText("-");
+        } else {
+            nominal.setText(Tnominal + ",00");
+        }
         waktu_donasi.setText(intent.getStringExtra("waktu_donasi"));
         kategori.setText(intent.getStringExtra("kategori"));
 //        String bukti = intent.getStringExtra("bukti");
         String upload_path = intent.getStringExtra("upload_path");
         String Tjumlah = intent.getStringExtra("jumlah_total");
-        if(Tjumlah.equalsIgnoreCase("null")){
+        if (Tjumlah.equalsIgnoreCase("null")) {
             jumlah.setText("-");
         } else {
             jumlah.setText(Tjumlah);
         }
 
-        if(upload_path.equalsIgnoreCase("null")){
+        if (upload_path.equalsIgnoreCase("null")) {
             terimaDonasi.setEnabled(false);
             terimaDonasi.setBackgroundColor(getResources().getColor(R.color.dark_grey));
             tolakDonasi.setEnabled(false);
@@ -79,13 +84,12 @@ public class R_DetailDonasi extends AppCompatActivity {
         }
 
 
-
 //        imageLoader = ImageAdapter.getInstance(context).getImageLoader();
 //        final NetworkImageView imageView1 = (NetworkImageView)findViewById(R.id.bukti);
 //        imageView1.setImageUrl(config.URL_KOSONGAN + upload_path, imageLoader);
     }
 
-    public void identified(){
+    public void identified() {
         id_bencana = findViewById(R.id.id_bencana);
         nama_donatur = findViewById(R.id.nama_donatur);
         nominal = findViewById(R.id.nominal);
@@ -162,11 +166,11 @@ public class R_DetailDonasi extends AppCompatActivity {
         Volley.newRequestQueue(this).add(stringRequest);
     }
 
-    private void setProfileImage(String imgUrl){
+    private void setProfileImage(String imgUrl) {
         final ImagePopup imagePopup = new ImagePopup(R_DetailDonasi.this);
         Picasso.get().load(imgUrl).into(bukti);
         imagePopup.initiatePopupWithPicasso(imgUrl);
-        bukti.setOnClickListener(new View.OnClickListener(){
+        bukti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 imagePopup.viewPopup();

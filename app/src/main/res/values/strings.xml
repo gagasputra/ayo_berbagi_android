@@ -31,6 +31,7 @@
 
     <string name="title_activity_profile">Profile</string>
     <string name="action_settings">Settings</string>
+    <string name="desk_pertanyaan">Pertanyaan keamanan diperlukan apabila terjadi lupa password</string>
 
     <string-array name="donasiBarang">
         <item>Pakaian</item>
@@ -47,6 +48,20 @@
         <item>Perorangan</item>
         <item>Kelompok</item>
         <item>Perusahaan</item>
+    </string-array>
+
+    <string-array name="pertanyaan">
+        <item>Siapa nama guru pertama Anda?</item>
+        <item>Siapa nama ibu kandung Anda?</item>
+        <item>Dimana tempat  lahir ayah Anda?</item>
+        <item>Dimana tempat  lahir ibu Anda?</item>
+        <item>Siapa nama depan sahabat pertama Anda?</item>
+        <item>Siapa nama hewan peliharaan pertama Anda?</item>
+        <item>Siapa nama panggilan adik bungsu Anda?</item>
+        <item>Siapa nama panggilan kakak pertama Anda?</item>
+        <item>Siapa nama panggilan sepupu tertua Anda?</item>
+        <item>Dimana Anda bertemu pasangan Anda?</item>
+
     </string-array>
 
 

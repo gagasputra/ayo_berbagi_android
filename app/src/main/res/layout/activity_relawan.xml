@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppThemeRelawan2"
+    android:theme="@style/AppThemeRelawan"
     tools:context=".relawan.ActivityRelawan">
 
     <FrameLayout
@@ -25,6 +25,6 @@
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
 
-        app:menu="@menu/nav" />
+        app:menu="@menu/nav_relawan" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -100,7 +100,6 @@ public class DProsesRelawan extends Fragment {
                         try {
                             JSONArray data = new JSONArray(response);
                             for (int i = 0; i < data.length(); i++) {
-
                                 JSONObject hasil = data.getJSONObject(i);
                                 RelawanProsesModel rpm = new RelawanProsesModel();
                                 rpm.setId_donasi(hasil.getString("id_donasi"));

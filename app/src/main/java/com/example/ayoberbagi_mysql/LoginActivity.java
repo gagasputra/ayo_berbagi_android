@@ -21,9 +21,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.ayoberbagi_mysql.donatur.MainActivity;
 import com.example.ayoberbagi_mysql.config.Preferences;
 import com.example.ayoberbagi_mysql.config.config;
+import com.example.ayoberbagi_mysql.donatur.MainActivity;
 import com.example.ayoberbagi_mysql.relawan.ActivityRelawan;
 
 import org.json.JSONException;
@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private final String TAG = "debug gagas";
 
     //Declaration TextView
-    TextView daftar;
+    TextView lupa_password;
 
     //Declaration EditTexts
     EditText editTextUsername;
@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     Boolean isLoggedInRelawan;
 
     //Declaration Button
-    Button buttonLogin;
+    Button buttonLogin, daftar_baru;
 
     //Declaration SharedPreferences
     private SharedPreferences sp;
@@ -77,6 +77,8 @@ public class LoginActivity extends AppCompatActivity {
         editTextUsername = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
+        daftar_baru = findViewById(R.id.daftar_baru);
+        lupa_password = findViewById(R.id.lupa_password);
 
         // Cek session login jika TRUE maka langsung buka MainActivity
         sp = getSharedPreferences("sp", Context.MODE_PRIVATE);
@@ -87,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
         session = pref.getUserStatus();
         session2 = pref.getRelawanStatus();
 
-        if(session){
+        if (session) {
 //            keViewBencana();
             keMainActivity();
         } else if (session2) {
@@ -103,8 +105,7 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 //        }
 
-        daftar = findViewById(R.id.daftar);
-        daftar.setOnClickListener(new View.OnClickListener() {
+        daftar_baru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 keDaftar();
@@ -118,12 +119,19 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        lupa_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ResetPassword.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
     private void login() {
-        final String username = editTextUsername.getText().toString().trim();
-        final String password = editTextPassword.getText().toString().trim();
+        final String username = editTextUsername.getText().toString();
+        final String password = editTextPassword.getText().toString();
 
         if (validate()) {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, config.URL_LOGIN,
@@ -137,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String id = user.getString("id");
                                 String username = user.getString("username");
 
-                                if(user.getString("role").equals("user")) {
+                                if (user.getString("role").equals("user")) {
                                     String idDonatur = user.getString("id_donatur");
                                     String nama_donatur = user.getString("nama_donatur");
                                     String no_ktp = user.getString("no_ktp");
@@ -155,10 +163,10 @@ public class LoginActivity extends AppCompatActivity {
                                     Log.d("response", "berhasil " + idPj);
                                 } else {
                                     //Displaying an error message on toast
-                                    Toast.makeText(context, "Username atau Password Salah!",Toast.LENGTH_LONG).show();
+                                    Toast.makeText(context, "Username atau Password Salah!", Toast.LENGTH_LONG).show();
                                 }
                             } catch (JSONException e) {
-                                Toast.makeText(context, "Username atau Password Salah!",Toast.LENGTH_LONG).show();
+                                Toast.makeText(context, "Username atau Password Salah!", Toast.LENGTH_LONG).show();
                                 e.printStackTrace();
                             }
                         }
@@ -250,7 +258,7 @@ public class LoginActivity extends AppCompatActivity {
         String Password = editTextPassword.getText().toString();
 
         //Handling validation for Email field
-        if (Username.isEmpty()){
+        if (Username.isEmpty()) {
             valid = false;
             editTextUsername.setError("Please enter username!");
         } else {

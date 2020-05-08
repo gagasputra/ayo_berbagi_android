@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: info.androidhive:fontawesome:0.0.5@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a57e3bafc9edc3b62320c1cacac2586a/jetified-fontawesome-0.0.5/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a57e3bafc9edc3b62320c1cacac2586a/jetified-fontawesome-0.0.5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd0584d9eb308cb34f3287d1c41432a7/jetified-fontawesome-0.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd0584d9eb308cb34f3287d1c41432a7/jetified-fontawesome-0.0.5/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/info.androidhive/fontawesome/0.0.5/1d5502a3c271f6e21b253acbfa91517b83498b5b/fontawesome-0.0.5-javadoc.jar!/" />

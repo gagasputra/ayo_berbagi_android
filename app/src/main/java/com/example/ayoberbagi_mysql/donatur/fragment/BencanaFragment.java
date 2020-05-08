@@ -84,6 +84,7 @@ public class BencanaFragment extends Fragment {
                                 JSONObject data = response.getJSONObject(i);
                                 Model md = new Model();
                                 md.setId_bencana(data.getString("id_bencana"));
+                                md.setId_pj(data.getString("id_pj"));
                                 md.setNama_bencana(data.getString("nama_bencana"));
                                 md.setNama_relawan(data.getString("nama"));
                                 md.setTgl_kejadian(data.getString("tgl_kejadian"));

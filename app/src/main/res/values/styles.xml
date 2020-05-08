@@ -17,6 +17,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="B4Activity" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/button_normal</item>
+    </style>
+
 <!--    <style name="MyActionBarRelawan" parent="@android:style/Widget.Holo.Light.ActionBar">-->
 <!--        <item name="android:background">#4CAF50</item>-->
 <!--    </style>-->

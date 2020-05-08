@@ -31,4 +31,7 @@
     <color name="blackTextColor">#000</color>
     <color name="profileEditTextColor">#707070</color>
 
+    <color name="btn_info">#71CD58</color>
+    <color name="btn_info_pressed">#4CAF50</color>
+
 </resources>

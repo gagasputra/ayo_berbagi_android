@@ -73,6 +73,7 @@ public class AdapterViewBencana extends RecyclerView.Adapter<AdapterViewBencana.
             public void onClick(View view) {
                 Intent i = new Intent(context, Donasi.class);
                 i.putExtra("id_bencana", model.getId_bencana());
+                i.putExtra("id_pj", model.getId_pj());
                 i.putExtra("nama_bencana", model.getNama_bencana());
                 i.putExtra("tgl_kejadian", model.getTgl_kejadian());
                 i.putExtra("lokasi", model.getLokasi());

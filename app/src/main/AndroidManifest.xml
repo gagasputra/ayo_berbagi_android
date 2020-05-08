@@ -20,28 +20,48 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".donatur.EditProfile"
-            android:label="Edit Profile"></activity>
+        <activity android:name=".relawan.ListDonasi"
+            android:label="List Donasi"
+            android:theme="@style/AppThemeRelawan"></activity>
+        <activity
+            android:name=".relawan.DetailDistribusi"
+            android:label="Detail Distribusi"
+            android:theme="@style/AppThemeRelawan" />
+        <activity
+            android:name=".ChangePassword"
+            android:theme="@style/B4Activity" />
+        <activity
+            android:name=".ResetPassword"
+            android:theme="@style/B4Activity" />
+        <activity
+            android:name=".donatur.EditProfile"
+            android:label="Edit Profile" />
         <activity
             android:name=".donatur.DonasiBarang"
-            android:label="Donasi Barang"></activity>
+            android:label="Donasi Barang" />
         <activity android:name=".relawan.R_DetailDonasi" />
         <activity android:name=".donatur.UploadBukti" />
         <activity
             android:name=".donatur.DetailDProses"
             android:label="Detail Donasi" />
-        <activity android:name=".donatur.DonasiHistory"
-            android:label="Detail Donasi"/>
+        <activity
+            android:name=".donatur.DonasiHistory"
+            android:label="Detail Donasi" />
         <activity
             android:name=".donatur.ProfileActivity"
             android:label="Profile" />
+        <activity
+            android:name=".relawan.RelawanProfile"
+            android:label="Profile"
+            android:theme="@style/AppThemeRelawan" />
         <activity
             android:name=".donatur.Berita"
             android:label="Berita" />
         <activity android:name=".donatur.fragment.HistoryFragment" />
         <activity android:name=".donatur.ProcessedFragment" />
-        <activity android:name=".donatur.DetailDBarang"
-            android:label="Detail Donasi"/>
+        <activity
+            android:name=".donatur.EditAkun"
+            android:label="Edit Akun" />
         <activity
             android:name=".donatur.Donasi"
             android:label="Bencana" />
@@ -50,14 +70,18 @@
             android:label="Donasi Uang" />
         <activity
             android:name=".Register"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/B4Activity" />
+        <activity
+            android:name=".Pertanyaan"
+            android:theme="@style/B4Activity" />
         <activity
             android:name=".relawan.ActivityRelawan"
             android:label="Relawan"
             android:theme="@style/AppThemeRelawan" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:fitsSystemWindows="true"
+            android:theme="@style/B4Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
