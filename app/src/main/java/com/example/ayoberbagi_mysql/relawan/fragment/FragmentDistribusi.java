@@ -102,9 +102,9 @@ public class FragmentDistribusi extends Fragment {
                                 dm.setKerugian(hasil.getString("kerugian"));
                                 dm.setBatas_akhir(hasil.getString("batas_akhir"));
                                 dm.setTotal_donasi(hasil.getString("total_donasi"));
-                                dm.setGambar_bencana(config.URL_GAMBAR + hasil.getString("gambar1"));
-                                dm.setGambar_bencana2(config.URL_GAMBAR + hasil.getString("gambar2"));
-                                dm.setGambar_bencana3(config.URL_GAMBAR + hasil.getString("gambar3"));
+                                dm.setGambar_bencana(hasil.getString("gambar1"));
+                                dm.setGambar_bencana2(hasil.getString("gambar2"));
+                                dm.setGambar_bencana3(hasil.getString("gambar3"));
                                 dm.setDeadline(hasil.getString("deadline"));
                                 dm.setTanggal_distribusi(hasil.getString("tanggal_distribusi"));
                                 dm.setTgl_akhir_distribusi(hasil.getString("tgl_akhir_distribusi"));

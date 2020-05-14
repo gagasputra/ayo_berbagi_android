@@ -15,6 +15,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.example.ayoberbagi_mysql.R;
 import com.example.ayoberbagi_mysql.config.ImageAdapter;
+import com.example.ayoberbagi_mysql.config.config;
 import com.example.ayoberbagi_mysql.relawan.DetailDistribusi;
 import com.example.ayoberbagi_mysql.relawan.model.DistribusiModel;
 
@@ -58,7 +59,7 @@ public class AdapterViewDistribusi extends RecyclerView.Adapter<AdapterViewDistr
 
         imageLoader = ImageAdapter.getInstance(context).getImageLoader();
 
-        imageLoader.get(model.getGambar_bencana(),
+        imageLoader.get(config.URL_KOSONGAN + model.getGambar_bencana(),
                 ImageLoader.getImageListener(
                         ViewBencanaHolder.gambar_bencana,//Server Image
                         R.mipmap.ic_launcher,//Before loading server image the default showing image.

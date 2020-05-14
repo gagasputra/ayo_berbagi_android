@@ -20,9 +20,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".relawan.ListDonasi"
-            android:label="List Donasi"
+        <activity android:name=".relawan.UploadBuktiDistribusi"
+            android:label="Upload Bukti Distribusi"
             android:theme="@style/AppThemeRelawan"></activity>
+        <activity android:name=".relawan.UploadDistribusi"
+            android:label="Upload Distribusi Donasi"
+            android:theme="@style/AppThemeRelawan"/>
+        <activity
+            android:name=".relawan.ListDonasi"
+            android:label="List Donasi"
+            android:theme="@style/AppThemeRelawan" />
         <activity
             android:name=".relawan.DetailDistribusi"
             android:label="Detail Distribusi"

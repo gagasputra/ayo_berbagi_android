@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <view
+        android:id="@+id/jumlah_donatur"
+        class="androidx.cardview.widget.CardView"
+        android:layout_width="163dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/rectanglebg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nama_bencana">
+
+        <ImageView
+            android:id="@+id/gambar1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="154dp" />
+    </view>
+
+    <Button
+        android:id="@+id/inputImage"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/button_submit"
+        android:onClick="uploadImage"
+        android:text="Pilih Gambar"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/jumlah_donatur"
+        app:layout_constraintStart_toStartOf="@+id/jumlah_donatur"
+        app:layout_constraintTop_toBottomOf="@+id/jumlah_donatur" />
+
+    <view
+        android:id="@+id/total_donasi"
+        class="androidx.cardview.widget.CardView"
+        android:layout_width="163dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/rectanglebg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nama_bencana">
+
+        <ImageView
+            android:id="@+id/gambar2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="154dp" />
+    </view>
+
+    <Button
+        android:id="@+id/inputImage2"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/button_submit"
+        android:onClick="uploadImage"
+        android:layout_marginTop="5dp"
+        android:text="Pilih Gambar"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/total_donasi"
+        app:layout_constraintStart_toStartOf="@+id/total_donasi"
+        app:layout_constraintTop_toBottomOf="@+id/total_donasi" />
+
+    <view
+        android:id="@+id/donasi_diterima"
+        class="androidx.cardview.widget.CardView"
+        android:layout_width="163dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/rectanglebg"
+        app:layout_constraintEnd_toEndOf="@+id/inputImage2"
+        app:layout_constraintStart_toStartOf="@+id/inputImage"
+        app:layout_constraintTop_toBottomOf="@+id/nama_bencana">
+
+        <ImageView
+            android:id="@+id/gambar3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="154dp" />
+    </view>
+
+    <Button
+        android:id="@+id/inputImage3"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/button_submit"
+        android:onClick="uploadImage"
+        android:text="Pilih Gambar"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/donasi_diterima"
+        app:layout_constraintStart_toStartOf="@+id/donasi_diterima"
+        app:layout_constraintTop_toBottomOf="@+id/donasi_diterima" />
+
+    <TextView
+        android:id="@+id/nama_bencana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:text="Nama Bencana"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/inputSemua"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_logout_relawan"
+        android:onClick="uploadImage"
+        android:text="Upload Bukti"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/inputImage3"
+        app:layout_constraintStart_toStartOf="@+id/inputImage3"
+        app:layout_constraintTop_toBottomOf="@+id/inputImage3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

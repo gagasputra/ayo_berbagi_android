@@ -93,9 +93,9 @@ public class DetailDistribusi extends AppCompatActivity {
         } else {
             ETlokasi_distribusi.setText(lokasi_distribusi);
         }
-        sgambar1 = intent.getStringExtra("gambar1");
-        sgambar2 = intent.getStringExtra("gambar2");
-        sgambar3 = intent.getStringExtra("gambar3");
+        sgambar1 = config.URL_KOSONGAN + intent.getStringExtra("gambar1");
+        sgambar2 = config.URL_KOSONGAN + intent.getStringExtra("gambar2");
+        sgambar3 = config.URL_KOSONGAN + intent.getStringExtra("gambar3");
 
         imageLoader = ImageAdapter.getInstance(context).getImageLoader();
         NetworkImageView imageView1 = (NetworkImageView) findViewById(R.id.gambar1);
@@ -270,5 +270,13 @@ public class DetailDistribusi extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+
+    public void uploadBukti(View view) {
+        Intent i = new Intent(DetailDistribusi.this, UploadDistribusi.class);
+        i.putExtra("id_bencana", id_bencana);
+        i.putExtra("nama_bencana", nama_bencana);
+        i.putExtra("total_donasi", total_donasi);
+        startActivity(i);
     }
 }
