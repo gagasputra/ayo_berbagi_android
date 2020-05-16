@@ -83,13 +83,17 @@ public class BeritaFragment extends Fragment {
                             try {
                                 JSONObject data = response.getJSONObject(i);
                                 BeritaModel bm = new BeritaModel();
-                                bm.setId_laporan(data.getString("id_laporan"));
+                                bm.setId_distribusi(data.getString("id_distribusi"));
+                                bm.setId_bencana(data.getString("id_bencana"));
                                 bm.setNama_bencana(data.getString("nama_bencana"));
-                                bm.setNama_relawan(data.getString("nama"));
+                                bm.setTanggal_distribusi(data.getString("tanggal_distribusi"));
+                                bm.setTgl_akhir_distribusi(data.getString("tgl_akhir_distribusi"));
+                                bm.setLokasi_distribusi(data.getString("lokasi_distribusi"));
+                                bm.setNama(data.getString("nama"));
                                 bm.setTotal_donasi(data.getString("total_donasi"));
-                                bm.setGambar1(config.URL_GAMBAR + data.getString("gambar1"));
-                                bm.setGambar2(config.URL_GAMBAR + data.getString("gambar2"));
-                                bm.setGambar3(config.URL_GAMBAR + data.getString("gambar3"));
+                                bm.setGambar1(config.URL_KOSONGAN + data.getString("gambar1"));
+                                bm.setGambar2(config.URL_KOSONGAN + data.getString("gambar2"));
+                                bm.setGambar3(config.URL_KOSONGAN + data.getString("gambar3"));
                                 bm.setLaporan(data.getString("laporan"));
 
                                 mItems.add(bm);

@@ -13,30 +13,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e501eb98-e17b-4597-b4d5-b2c9601ef4e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/UploadBuktiDistribusi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/UploadDistribusi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_upload_bukti_distribusi.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_upload_distribusi.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/input_distribusi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/config/config.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/config/config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/DetailDistribusi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/DetailDistribusi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/adapter/AdapterViewDistribusi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/adapter/AdapterViewDistribusi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/fragment/FragmentDistribusi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/fragment/FragmentDistribusi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button_logout_relawan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_logout_relawan.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_distribusi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_distribusi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/DonasiBarang.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/DonasiBarang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/adapter/AdapterViewBerita.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/adapter/AdapterViewBerita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/fragment/BeritaFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/fragment/BeritaFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/model/BeritaModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/donatur/model/BeritaModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/UploadBuktiDistribusi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ayoberbagi_mysql/relawan/UploadBuktiDistribusi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/donasi_barang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/donasi_barang.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -194,9 +185,9 @@
       <list>
         <option value="layoutResourceFile_vertical" />
         <option value="valueResourceFile" />
-        <option value="Class" />
         <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -220,8 +211,8 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.ayoberbagi_mysql.config" />
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.example.ayoberbagi_mysql" />
@@ -248,8 +239,8 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.ayoberbagi_mysql" />
     </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.ayoberbagi_mysql.config" />
     </key>
   </component>
   <component name="RunDashboard">

@@ -84,6 +84,9 @@ public class DonasiBarang extends AppCompatActivity {
     String jml_alat_rt = "jml_alat_rt";
     String barang_lain = "barang_lain";
     String jml_lain = "jml_lain";
+    String anonim;
+
+    CheckBox CBanonim;
 
     String ET1, ET2, ET3, ET4, ET5, ET6, ET7, ET8, ETbarang_lain, ET9;
 
@@ -248,6 +251,12 @@ public class DonasiBarang extends AppCompatActivity {
             etBarangLain.setText("-");
             et9.setText("0");
         }
+
+        if (CBanonim.isChecked()) {
+            anonim = "1";
+        } else {
+            anonim = "0";
+        }
     }
 
     private void showPictureDialog() {
@@ -391,6 +400,7 @@ public class DonasiBarang extends AppCompatActivity {
 
                 HashMapParams.put(ImageTag, GetImageNameFromEditText);
                 HashMapParams.put(config.KEY_ID_BENCANA, intent.getStringExtra("id_bencana"));
+                HashMapParams.put(config.KEY_ANONIM, anonim);
                 HashMapParams.put(config.KEY_ID_DONATUR, donaturModel.getIdDonatur());
 
 //                    HashMapParams.put(config.KEY_ID_DONASI, intent.getStringExtra("id_donasi"));
@@ -510,6 +520,7 @@ public class DonasiBarang extends AppCompatActivity {
         et8 = findViewById(R.id.et8);
         et9 = findViewById(R.id.et9);
         etBarangLain = findViewById(R.id.barang_lain);
+        CBanonim = findViewById(R.id.anonim);
 
         cb1 = findViewById(R.id.cb1);
         cb2 = findViewById(R.id.cb2);

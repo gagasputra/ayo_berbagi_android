@@ -41,7 +41,7 @@ public class AdapterViewBerita extends RecyclerView.Adapter<AdapterViewBerita.Vi
     public void onBindViewHolder(@NonNull ViewBeritaHolder holder, final int position) {
         final BeritaModel bm = item.get(position);
         holder.nama_bencana.setText(bm.getNama_bencana());
-        holder.nama_relawan.setText(bm.getNama_relawan());
+        holder.nama_relawan.setText(bm.getNama());
         holder.total_donasi.setText("Rp. " + bm.getTotal_donasi() + ",00");
 
 
@@ -61,9 +61,9 @@ public class AdapterViewBerita extends RecyclerView.Adapter<AdapterViewBerita.Vi
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, Berita.class);
-                i.putExtra("id_laporan", bm.getId_laporan());
+                i.putExtra("id_distribusi", bm.getId_distribusi());
                 i.putExtra("nama_bencana", bm.getNama_bencana());
-                i.putExtra("nama_relawan", bm.getNama_relawan());
+                i.putExtra("nama_relawan", bm.getNama());
                 i.putExtra("gambar1", bm.getGambar1());
                 i.putExtra("gambar2", bm.getGambar2());
                 i.putExtra("gambar3", bm.getGambar3());

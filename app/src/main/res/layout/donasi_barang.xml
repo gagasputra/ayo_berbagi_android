@@ -73,6 +73,14 @@
 
         </LinearLayout>
 
+        <CheckBox
+            android:id="@+id/anonim"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Donasi Sebagai Anonim"
+            android:textSize="16dp" />
+
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="1dp"

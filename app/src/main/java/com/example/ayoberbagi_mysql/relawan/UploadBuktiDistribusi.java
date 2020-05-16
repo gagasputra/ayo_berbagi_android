@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -117,10 +118,6 @@ public class UploadBuktiDistribusi extends AppCompatActivity {
         intent = getIntent();
         id_bencana = intent.getStringExtra("id_bencana");
         TVnama_bencana.setText(intent.getStringExtra("nama_bencana"));
-
-        byteArrayOutputStream1 = new ByteArrayOutputStream();
-        byteArrayOutputStream2 = new ByteArrayOutputStream();
-        byteArrayOutputStream3 = new ByteArrayOutputStream();
 
         inputImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -255,6 +252,13 @@ public class UploadBuktiDistribusi extends AppCompatActivity {
                 Uri contentURI = data.getData();
                 try {
                     FixBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
+                    byteArrayOutputStream1 = new ByteArrayOutputStream();
+                    FixBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream1);
+                    byteArray1 = byteArrayOutputStream1.toByteArray();
+                    ConvertImage1 = Base64.encodeToString(byteArray1, Base64.DEFAULT);
+
+                    Log.d("gambar1", "gambar1: " + FixBitmap);
+                    Log.d("gambar1", "uri" + contentURI);
                     // String path = saveImage(bitmap);
                     //Toast.makeText(context, "Image Saved!", Toast.LENGTH_SHORT).show();
                     gambar1.setImageBitmap(FixBitmap);
@@ -266,11 +270,19 @@ public class UploadBuktiDistribusi extends AppCompatActivity {
                 }
             }
 
-        } else if (requestCode == GALLERY2) {
+        }
+        if (requestCode == GALLERY2) {
             if (data != null) {
                 Uri contentURI2 = data.getData();
                 try {
                     FixBitmap2 = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI2);
+                    byteArrayOutputStream2 = new ByteArrayOutputStream();
+                    FixBitmap2.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream2);
+                    byteArray2 = byteArrayOutputStream2.toByteArray();
+                    ConvertImage2 = Base64.encodeToString(byteArray2, Base64.DEFAULT);
+
+                    Log.d("gambar1", "gambar1: " + FixBitmap2);
+                    Log.d("gambar1", "uri" + contentURI2);
                     // String path = saveImage(bitmap);
                     //Toast.makeText(context, "Image Saved!", Toast.LENGTH_SHORT).show();
                     gambar2.setImageBitmap(FixBitmap2);
@@ -281,11 +293,20 @@ public class UploadBuktiDistribusi extends AppCompatActivity {
                     Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
                 }
             }
-        } else if (requestCode == GALLERY3) {
+        }
+        if (requestCode == GALLERY3) {
             if (data != null) {
                 Uri contentURI3 = data.getData();
                 try {
                     FixBitmap3 = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI3);
+
+                    byteArrayOutputStream3 = new ByteArrayOutputStream();
+                    FixBitmap3.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream3);
+                    byteArray3 = byteArrayOutputStream3.toByteArray();
+                    ConvertImage3 = Base64.encodeToString(byteArray3, Base64.DEFAULT);
+
+                    Log.d("gambar1", "gambar1: " + FixBitmap3);
+                    Log.d("gambar1", "uri" + contentURI3);
                     // String path = saveImage(bitmap);
                     //Toast.makeText(context, "Image Saved!", Toast.LENGTH_SHORT).show();
                     gambar3.setImageBitmap(FixBitmap3);
@@ -296,19 +317,22 @@ public class UploadBuktiDistribusi extends AppCompatActivity {
                     Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show();
                 }
             }
-        } else if (requestCode == CAMERA1) {
+        }
+        if (requestCode == CAMERA1) {
             FixBitmap = (Bitmap) data.getExtras().get("data");
             gambar1.setImageBitmap(FixBitmap);
             uploadSemua.setVisibility(View.VISIBLE);
             //  saveImage(thumbnail);
             //Toast.makeText(ShadiRegistrationPart5.this, "Image Saved!", Toast.LENGTH_SHORT).show();
-        } else if (requestCode == CAMERA2) {
+        }
+        if (requestCode == CAMERA2) {
             FixBitmap2 = (Bitmap) data.getExtras().get("data");
             gambar2.setImageBitmap(FixBitmap2);
             uploadSemua.setVisibility(View.VISIBLE);
             //  saveImage(thumbnail);
             //Toast.makeText(ShadiRegistrationPart5.this, "Image Saved!", Toast.LENGTH_SHORT).show();
-        } else if (requestCode == CAMERA3) {
+        }
+        if (requestCode == CAMERA3) {
             FixBitmap3 = (Bitmap) data.getExtras().get("data");
             gambar3.setImageBitmap(FixBitmap3);
             uploadSemua.setVisibility(View.VISIBLE);
@@ -318,19 +342,6 @@ public class UploadBuktiDistribusi extends AppCompatActivity {
     }
 
     public void UploadImageToServer() {
-
-        FixBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream1);
-        FixBitmap2.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream2);
-        FixBitmap3.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream3);
-
-        byteArray1 = byteArrayOutputStream1.toByteArray();
-        byteArray2 = byteArrayOutputStream2.toByteArray();
-        byteArray3 = byteArrayOutputStream3.toByteArray();
-
-        ConvertImage1 = Base64.encodeToString(byteArray1, Base64.DEFAULT);
-        ConvertImage2 = Base64.encodeToString(byteArray1, Base64.DEFAULT);
-        ConvertImage3 = Base64.encodeToString(byteArray1, Base64.DEFAULT);
-
 
         class AsyncTaskUploadClass extends AsyncTask<Void, Void, String> {
 
@@ -378,11 +389,15 @@ public class UploadBuktiDistribusi extends AppCompatActivity {
                 HashMapParams.put(ImageTag2, getImageName2);
                 HashMapParams.put(ImageTag3, getImageName3);
                 HashMapParams.put(ImageName1, ConvertImage1);
+                Log.d("gambar1", "gambar1: " + ConvertImage1);
                 HashMapParams.put(ImageName2, ConvertImage2);
+                Log.d("gambar1", "gambar2: " + ConvertImage2);
                 HashMapParams.put(ImageName3, ConvertImage3);
+                Log.d("gambar1", "gambar3: " + ConvertImage3);
                 HashMapParams.put(config.KEY_ID_PJ, relawanModel.getIdPj());
 
                 String FinalData = imageProcessClass.ImageHttpRequest(config.URL_UPLOAD_DISTRIBUSI, HashMapParams);
+                Log.d("final", "Final Data: " + FinalData);
 
                 return FinalData;
             }
