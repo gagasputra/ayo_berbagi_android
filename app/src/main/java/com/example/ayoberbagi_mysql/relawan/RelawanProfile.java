@@ -29,8 +29,6 @@ import com.example.ayoberbagi_mysql.R;
 import com.example.ayoberbagi_mysql.config.ImageAdapter;
 import com.example.ayoberbagi_mysql.config.Preferences;
 import com.example.ayoberbagi_mysql.config.config;
-import com.example.ayoberbagi_mysql.donatur.EditAkun;
-import com.example.ayoberbagi_mysql.donatur.EditProfile;
 import com.example.ayoberbagi_mysql.relawan.model.RelawanModel;
 import com.squareup.picasso.Picasso;
 
@@ -200,9 +198,9 @@ public class RelawanProfile extends AppCompatActivity {
         Preferences pref = new Preferences(getApplicationContext());
         RelawanModel relawanModel = pref.getRelawanSession();
         Intent i = new Intent(RelawanProfile.this, EditProfile.class);
-        i.putExtra("id_donatur", relawanModel.getIdPj());
+        i.putExtra("id_relawan", relawanModel.getIdPj());
         i.putExtra("username", txt_username.getText());
-        i.putExtra("nama_donatur", txt_nama.getText());
+        i.putExtra("nama_relawan", txt_nama.getText());
         i.putExtra("no_ktp", txt_noktp.getText());
         i.putExtra("email", txt_email.getText());
         i.putExtra("nohp", txt_nohp.getText());

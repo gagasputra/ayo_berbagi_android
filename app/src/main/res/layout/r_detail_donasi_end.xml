@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ayoberbagi_mysql.relawan.R_DetailDonasi">
+
+    <TextView
+        android:id="@+id/nama_donatur"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Nama Donatur"
+        android:textAlignment="center"
+        android:textColor="#040404"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ViewFlipper
+        android:id="@+id/flipperid"
+        android:layout_width="285dp"
+        android:layout_height="256dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:elevation="5dp"
+        android:flipInterval="4000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nama_donatur">
+
+        <ImageView
+            android:id="@+id/bukti"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"/>
+
+    </ViewFlipper>
+
+    <TextView
+        android:id="@+id/txt_waktu_donasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:text="Waktu Donasi :"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flipperid" />
+
+    <TextView
+        android:id="@+id/waktu_donasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waktu Donasi"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toEndOf="@+id/txt_waktu_donasi"
+        app:layout_constraintTop_toTopOf="@+id/txt_waktu_donasi" />
+
+    <TextView
+        android:id="@+id/txt_waktu_diterima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="Waktu Diterima :"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_waktu_donasi" />
+
+    <TextView
+        android:id="@+id/waktu_diterima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waktu Diterima"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/waktu_donasi"
+        app:layout_constraintTop_toTopOf="@+id/txt_waktu_diterima" />
+
+    <TextView
+        android:id="@+id/txt_kategori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Kategori :"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/txt_waktu_diterima"
+        app:layout_constraintTop_toBottomOf="@+id/txt_waktu_diterima" />
+
+    <TextView
+        android:id="@+id/kategori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kategori"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/waktu_donasi"
+        app:layout_constraintTop_toTopOf="@+id/txt_kategori" />
+
+    <TextView
+        android:id="@+id/txt_nominal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Nominal :"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/txt_kategori"
+        app:layout_constraintTop_toBottomOf="@+id/txt_kategori" />
+
+    <TextView
+        android:id="@+id/nominal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nominal"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/kategori"
+        app:layout_constraintTop_toTopOf="@+id/txt_nominal" />
+
+    <TextView
+        android:id="@+id/txt_jumlah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Jumlah :"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/txt_nominal"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nominal" />
+
+    <TextView
+        android:id="@+id/jumlah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jumlah"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/nominal"
+        app:layout_constraintTop_toTopOf="@+id/txt_jumlah" />
+
+    <TextView
+        android:id="@+id/id_bencana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#00FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/flipperid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/flipperid" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

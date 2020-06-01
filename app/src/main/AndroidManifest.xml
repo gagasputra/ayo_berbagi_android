@@ -20,12 +20,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".relawan.UploadBuktiDistribusi"
+        <activity
+            android:name=".relawan.UploadBuktiDistribusi"
             android:label="Upload Bukti Distribusi"
             android:theme="@style/AppThemeRelawan"></activity>
-        <activity android:name=".relawan.UploadDistribusi"
+        <activity
+            android:name=".relawan.UploadDistribusi"
             android:label="Upload Distribusi Donasi"
-            android:theme="@style/AppThemeRelawan"/>
+            android:theme="@style/AppThemeRelawan" />
         <activity
             android:name=".relawan.ListDonasi"
             android:label="List Donasi"
@@ -33,6 +35,10 @@
         <activity
             android:name=".relawan.DetailDistribusi"
             android:label="Detail Distribusi"
+            android:theme="@style/AppThemeRelawan" />
+        <activity
+            android:name=".relawan.R_DetailDonasiEnd"
+            android:label="Detail Donasi"
             android:theme="@style/AppThemeRelawan" />
         <activity
             android:name=".ChangePassword"
@@ -46,7 +52,10 @@
         <activity
             android:name=".donatur.DonasiBarang"
             android:label="Donasi Barang" />
-        <activity android:name=".relawan.R_DetailDonasi" />
+        <activity
+            android:name=".relawan.R_DetailDonasi"
+            android:label="Detail Donasi"
+            android:theme="@style/AppThemeRelawan" />
         <activity android:name=".donatur.UploadBukti" />
         <activity
             android:name=".donatur.DetailDProses"
@@ -69,6 +78,14 @@
         <activity
             android:name=".donatur.EditAkun"
             android:label="Edit Akun" />
+        <activity
+            android:name=".relawan.EditAkun"
+            android:label="Edit Akun"
+            android:theme="@style/AppThemeRelawan" />
+        <activity
+            android:name=".relawan.EditProfile"
+            android:label="Edit Profile"
+            android:theme="@style/AppThemeRelawan" />
         <activity
             android:name=".donatur.Donasi"
             android:label="Bencana" />

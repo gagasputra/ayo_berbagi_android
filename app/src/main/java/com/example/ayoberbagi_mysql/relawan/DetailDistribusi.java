@@ -40,7 +40,7 @@ import java.util.Map;
 
 public class DetailDistribusi extends AppCompatActivity {
 
-    TextView TVid_bencana, TVnama_bencana, TVDnama_bencana;
+    TextView TVid_bencana, TVnama_bencana, TVDnama_bencana, tv_upload;
     EditText ETtotal_donasi, ETtgl_distribusi, ETlokasi_distribusi;
     String id_bencana, nama_bencana, total_donasi, tgl_distribusi, tgl_akhir_distribusi, lokasi_distribusi;
 
@@ -53,7 +53,7 @@ public class DetailDistribusi extends AppCompatActivity {
     AlertDialog.Builder dialog;
     LayoutInflater inflater;
     View dialogView;
-    Button detailDistribusi, listDonasi;
+    Button detailDistribusi, listDonasi, upload_distribusi;
 
     EditText DETtgl_kejadian, DETlokasi, DETdeskripsi, DETjml_korban, DETkerugian, DETbatas_akhir, DETnama_relawan;
     EditText ETDtotal_donasi, ETDlokasi_distribusi, ETDtanggal_distribusi, ETDbatas_akhir, ETDlaporan;
@@ -79,7 +79,12 @@ public class DetailDistribusi extends AppCompatActivity {
         TVid_bencana.setText(id_bencana);
         TVnama_bencana.setText(nama_bencana);
         ETtotal_donasi.setText("Rp. " + total_donasi + ".00");
-        if (tgl_distribusi.equalsIgnoreCase("null")) {
+        String status = intent.getStringExtra("status");
+        if (status.equalsIgnoreCase("0")) {
+            ETtgl_distribusi.setText("Donasi Belum Selesai");
+            upload_distribusi.setVisibility(View.GONE);
+            tv_upload.setVisibility(View.GONE);
+        } else if (status.equalsIgnoreCase("1")) {
             ETtgl_distribusi.setText("Donasi Belum Didistribusikan");
         } else if (tgl_akhir_distribusi.equals(tgl_distribusi)) {
             ETtgl_distribusi.setText(tgl_distribusi);
@@ -89,10 +94,11 @@ public class DetailDistribusi extends AppCompatActivity {
             detailDistribusi.setVisibility(View.VISIBLE);
         }
         if (lokasi_distribusi.equalsIgnoreCase("null")) {
-            ETlokasi_distribusi.setText("Donasi Belum Didistribusikan");
+            ETlokasi_distribusi.setText(ETtgl_distribusi.getText());
         } else {
             ETlokasi_distribusi.setText(lokasi_distribusi);
         }
+
         sgambar1 = config.URL_KOSONGAN + intent.getStringExtra("gambar1");
         sgambar2 = config.URL_KOSONGAN + intent.getStringExtra("gambar2");
         sgambar3 = config.URL_KOSONGAN + intent.getStringExtra("gambar3");
@@ -136,11 +142,13 @@ public class DetailDistribusi extends AppCompatActivity {
         gambar1 = findViewById(R.id.gambar1);
         gambar2 = findViewById(R.id.gambar2);
         gambar3 = findViewById(R.id.gambar3);
+        tv_upload = findViewById(R.id.tv_upload);
         ETtotal_donasi = (EditText) findViewById(R.id.total_donasi);
         ETtgl_distribusi = findViewById(R.id.tgl_distribusi);
         ETlokasi_distribusi = findViewById(R.id.lokasi_distribusi);
         detailDistribusi = findViewById(R.id.detailDistribusi);
         listDonasi = findViewById(R.id.listDonasi);
+        upload_distribusi = findViewById(R.id.upload_bukti);
     }
 
     public void detailBencana(View view) {

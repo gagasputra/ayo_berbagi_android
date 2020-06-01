@@ -1,9 +1,11 @@
 package com.example.ayoberbagi_mysql.relawan.model;
 
 public class RelawanProsesModel {
-    String id_donasi, id_donasi_barang, id_pj, id_bencana, id_donatur, nama_donatur, telp, nama_bencana, kategori, nominal, waktu_donasi, jumlah_total, jml_pakaian, jml_selimut, jml_buku, jml_sembako, jml_makan_minum, jml_medis_obat, jml_mainan, jml_alat_rt, barang_lain, jml_lain, foto, path_foto, bukti, upload_path, keterangan, status;
+    String id_donasi, id_donasi_barang, id_pj, id_bencana, id_donatur, nama_donatur, telp, nama_bencana, kategori, nominal, waktu_donasi, jumlah_total, jml_pakaian, jml_selimut, jml_buku, jml_sembako, jml_makan_minum, jml_medis_obat, jml_mainan, jml_alat_rt, barang_lain, jml_lain, foto, path_foto, bukti, upload_path, keterangan, status, konfirmasi, waktu_diterima;
 
     public RelawanProsesModel() {
+        this.konfirmasi = konfirmasi;
+        this.waktu_diterima = waktu_diterima;
         this.id_donasi = id_donasi;
         this.id_donasi_barang = id_donasi_barang;
         this.id_pj = id_pj;
@@ -36,6 +38,22 @@ public class RelawanProsesModel {
 
     public String getId_donasi() {
         return id_donasi;
+    }
+
+    public String getWaktu_diterima() {
+        return waktu_diterima;
+    }
+
+    public void setWaktu_diterima(String waktu_diterima) {
+        this.waktu_diterima = waktu_diterima;
+    }
+
+    public String getKonfirmasi() {
+        return konfirmasi;
+    }
+
+    public void setKonfirmasi(String konfirmasi) {
+        this.konfirmasi = konfirmasi;
     }
 
     public void setId_donasi(String id_donasi) {

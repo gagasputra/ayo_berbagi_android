@@ -81,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
         lupa_password = findViewById(R.id.lupa_password);
 
         // Cek session login jika TRUE maka langsung buka MainActivity
-        sp = getSharedPreferences("sp", Context.MODE_PRIVATE);
         id = sp.getString(config.TAG_ID, null);
         username = sp.getString(config.TAG_USERNAME, null);
 

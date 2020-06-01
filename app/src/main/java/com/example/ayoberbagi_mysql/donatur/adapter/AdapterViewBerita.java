@@ -62,8 +62,15 @@ public class AdapterViewBerita extends RecyclerView.Adapter<AdapterViewBerita.Vi
             public void onClick(View view) {
                 Intent i = new Intent(context, Berita.class);
                 i.putExtra("id_distribusi", bm.getId_distribusi());
+                i.putExtra("id_bencana", bm.getId_bencana());
                 i.putExtra("nama_bencana", bm.getNama_bencana());
+                i.putExtra("tgl_kejadian", bm.getTgl_kejadian());
                 i.putExtra("nama_relawan", bm.getNama());
+                i.putExtra("tanggal_distribusi", bm.getTanggal_distribusi());
+                i.putExtra("tgl_akhir_distribusi", bm.getTgl_akhir_distribusi());
+                i.putExtra("laporan", bm.getLaporan());
+                i.putExtra("total_donasi", bm.getTotal_donasi());
+                i.putExtra("lokasi_distribusi", bm.getLokasi_distribusi());
                 i.putExtra("gambar1", bm.getGambar1());
                 i.putExtra("gambar2", bm.getGambar2());
                 i.putExtra("gambar3", bm.getGambar3());

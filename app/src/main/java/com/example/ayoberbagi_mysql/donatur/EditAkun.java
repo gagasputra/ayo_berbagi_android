@@ -168,4 +168,7 @@ public class EditAkun extends AppCompatActivity {
 
         return valid;
     }
+
+    public void pertanyaan(View view) {
+    }
 }

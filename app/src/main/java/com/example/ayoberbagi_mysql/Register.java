@@ -10,8 +10,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.ayoberbagi_mysql.config.Preferences;
+import com.example.ayoberbagi_mysql.config.config;
+import com.example.ayoberbagi_mysql.relawan.model.RelawanModel;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
@@ -60,21 +77,65 @@ public class Register extends AppCompatActivity {
         password = ETpassword.getText().toString().trim();
         repassword = ETrepassword.getText().toString().trim();
         if (validate()) {
-            Intent i = new Intent(this, Pertanyaan.class);
-            i.putExtra("nama_donatur", Snama);
-            i.putExtra("tipe_donatur", StipeDonatur);
-            i.putExtra("email", Semail);
-            i.putExtra("noktp", Snoktp);
-            i.putExtra("username", username);
-            i.putExtra("password", password);
-            i.putExtra("repassword", repassword);
-            Log.d("hasil: ", Snama + StipeDonatur
-                    + Semail
-                    + Snoktp
-                    + username
-                    + password
-                    + repassword);
-            startActivity(i);
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, config.URL_CEK_USERNAME,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                Log.d("berhasil", "Response: " + response);
+                                JSONObject user = new JSONObject(response);
+
+                                if (user.getString("akses").equals("username_sama")) {
+                                    Toast.makeText(context, "Username telah digunakan", Toast.LENGTH_LONG).show();
+                                } else if (user.getString("akses").equals("email_sama")){
+                                    Toast.makeText(context, "Email telah digunakan", Toast.LENGTH_LONG).show();
+                                } else if (user.getString("akses").equals("ktp_sama")){
+                                    Toast.makeText(context, "No. KTP telah terdaftar", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Intent i = new Intent(context, Pertanyaan.class);
+                                    i.putExtra("nama_donatur", Snama);
+                                    i.putExtra("tipe_donatur", StipeDonatur);
+                                    i.putExtra("email", Semail);
+                                    i.putExtra("noktp", Snoktp);
+                                    i.putExtra("username", username);
+                                    i.putExtra("password", password);
+                                    i.putExtra("repassword", repassword);
+                                    Log.d("hasil: ", Snama + StipeDonatur
+                                            + Semail
+                                            + Snoktp
+                                            + username
+                                            + password
+                                            + repassword);
+                                    startActivity(i);
+                                    finish();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, "The server unreachable", Toast.LENGTH_LONG).show();
+                }
+            }) {
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Preferences pref = new Preferences(getApplicationContext());
+                    RelawanModel relawanModel = pref.getRelawanSession();
+
+                    Map<String, String> params = new HashMap<>();
+
+                    params.put("email", Semail);
+                    params.put("username", username);
+                    params.put("no_ktp", Snoktp);
+
+                    return params;
+                }
+
+            };
+            Volley.newRequestQueue(this).
+
+                    add(stringRequest);
         }
     }
 
@@ -156,10 +217,10 @@ public class Register extends AppCompatActivity {
         //Handling validation for KTP field
         if (KTP.isEmpty()) {
             valid_ktp = false;
-            ETnoKtp.setError("Please enter valid KTP!");
+            ETnoKtp.setError("Nomor KTP tidak valid!");
         } else if (KTP.length() < 16 || KTP.length() > 16) {
             valid_ktp = false;
-            ETnoKtp.setError("KTP must have 16 digits!");
+            ETnoKtp.setError("KTP harus 16 karakter!");
         } else {
             valid_ktp = true;
             ETnoKtp.setError(null);
@@ -168,10 +229,10 @@ public class Register extends AppCompatActivity {
         //Handling validation for UserName field
         if (UserName.isEmpty()) {
             valid_user = false;
-            ETusername.setError("Please enter valid username!");
+            ETusername.setError("Username tidak valid!");
         } else if (UserName.length() < 5) {
             valid_user = false;
-            ETusername.setError("Username is to short!");
+            ETusername.setError("Username minimal 6 karakter!");
         } else {
             valid_user = true;
             ETusername.setError(null);
@@ -180,10 +241,10 @@ public class Register extends AppCompatActivity {
         //Handling validation for Email field
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
             valid_email = false;
-            ETemail.setError("Please enter valid email!");
+            ETemail.setError("Email tidak valid!");
         } else if (Email.isEmpty()) {
             valid_email = false;
-            ETemail.setError("Email cannot empty!");
+            ETemail.setError("Email tidak boleh kosong!");
         } else {
             valid_email = true;
             ETemail.setError(null);
@@ -192,13 +253,13 @@ public class Register extends AppCompatActivity {
         //Handling validation for Password field
         if (Password.isEmpty()) {
             valid_pass = false;
-            ETpassword.setError("Password cannot empty!");
-        } else if (Password.length() > 5) {
+            ETpassword.setError("Password tidak boleh kosong!");
+        } else if (Password.length() > 7) {
             valid_pass = true;
             ETpassword.setError(null);
         } else {
             valid_pass = false;
-            ETpassword.setError("Password is to short!");
+            ETpassword.setError("Password minimal 8 karakter!");
         }
 
         //
@@ -207,7 +268,7 @@ public class Register extends AppCompatActivity {
             ETrepassword.setError("Konfirmasi password tidak sama!");
         } else if (ConfPassword.isEmpty()) {
             valid_conf = false;
-            ETrepassword.setError("Konfirmasi password cannot empty!");
+            ETrepassword.setError("Konfirmasi password tidak boleh kosong!");
         } else {
             valid_conf = true;
             ETrepassword.setError(null);
@@ -241,4 +302,11 @@ public class Register extends AppCompatActivity {
         BTNregister = (Button) findViewById(R.id.buttonRegister);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

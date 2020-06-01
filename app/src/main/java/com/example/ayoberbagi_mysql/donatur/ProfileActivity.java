@@ -57,9 +57,6 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profil);
         Intent i = getIntent();
-
-
-
         id = i.getStringExtra(config.TAG_ID);
 //        username = i.getStringExtra(config.TAG_USERNAME);
 

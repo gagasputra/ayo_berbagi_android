@@ -239,7 +239,7 @@
                         android:text="Detail Distribusi"
                         android:textColor="@color/whiteTextColor" />
                     <TextView
-                        android:id="@+id/tv_file_path"
+                        android:id="@+id/tv_upload"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"

@@ -1,13 +1,14 @@
 package com.example.ayoberbagi_mysql.donatur.model;
 
 public class BeritaModel {
-    String id_distribusi, id_bencana, id_pj, nama_bencana, tanggal_distribusi, tgl_akhir_distribusi, lokasi_distribusi, total_donasi, nama, laporan, gambar1, gambar2, gambar3, status;
+    String id_distribusi, id_bencana, id_pj, nama_bencana, tgl_kejadian, tanggal_distribusi, tgl_akhir_distribusi, lokasi_distribusi, total_donasi, nama, laporan, gambar1, gambar2, gambar3, status;
 
     public BeritaModel() {
         this.id_distribusi = id_distribusi;
         this.id_bencana = id_bencana;
         this.id_pj = id_pj;
         this.nama_bencana = nama_bencana;
+        this.tgl_kejadian = tgl_kejadian;
         this.tanggal_distribusi = tanggal_distribusi;
         this.tgl_akhir_distribusi = tgl_akhir_distribusi;
         this.lokasi_distribusi = lokasi_distribusi;
@@ -18,6 +19,14 @@ public class BeritaModel {
         this.gambar2 = gambar2;
         this.gambar3 = gambar3;
         this.status = status;
+    }
+
+    public String getTgl_kejadian() {
+        return tgl_kejadian;
+    }
+
+    public void setTgl_kejadian(String tgl_kejadian) {
+        this.tgl_kejadian = tgl_kejadian;
     }
 
     public String getId_distribusi() {

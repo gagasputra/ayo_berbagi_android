@@ -65,13 +65,13 @@ public class Pertanyaan extends AppCompatActivity {
                             Toast.makeText(context, "Registrasi Berhasil", Toast.LENGTH_LONG).show();
                             Intent i = new Intent(context, LoginActivity.class);
                             startActivity(i);
+                            finish();
                         }
                     },
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             Toast.makeText(context, "The server unreachable", Toast.LENGTH_LONG).show();
-
                         }
                     }) {
                 @Override

@@ -56,31 +56,29 @@ public class UploadBukti extends AppCompatActivity {
 
     Bitmap FixBitmap;
 
-    String ImageTag = "image_tag" ;
+    String ImageName = "image_data";
 
-    String ImageName = "image_data" ;
+    ProgressDialog progressDialog;
 
-    ProgressDialog progressDialog ;
+    ByteArrayOutputStream byteArrayOutputStream;
 
-    ByteArrayOutputStream byteArrayOutputStream ;
+    byte[] byteArray;
 
-    byte[] byteArray ;
-
-    String ConvertImage ;
+    String ConvertImage;
 
     String GetImageNameFromEditText;
 
-    HttpURLConnection httpURLConnection ;
+    HttpURLConnection httpURLConnection;
 
     URL url;
 
     OutputStream outputStream;
 
-    BufferedWriter bufferedWriter ;
+    BufferedWriter bufferedWriter;
 
-    int RC ;
+    int RC;
 
-    BufferedReader bufferedReader ;
+    BufferedReader bufferedReader;
 
     StringBuilder stringBuilder;
 
@@ -120,7 +118,7 @@ public class UploadBukti extends AppCompatActivity {
         intent = getIntent();
         String Tnominal = intent.getStringExtra("nominal");
         String Tnama_bencana = intent.getStringExtra("nama_bencana");
-        if(Tnominal.equalsIgnoreCase("Donasi Barang")){
+        if (Tnominal.equalsIgnoreCase("Donasi Barang")) {
             setTitle("Upload Bukti Pengiriman");
         } else {
             setTitle("Upload Bukti Transfer");
@@ -152,8 +150,6 @@ public class UploadBukti extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                GetImageNameFromEditText = imageName.getText().toString();
-
                 UploadImageToServer();
 
             }
@@ -167,12 +163,12 @@ public class UploadBukti extends AppCompatActivity {
         }
     }
 
-    private void showPictureDialog(){
+    private void showPictureDialog() {
         AlertDialog.Builder pictureDialog = new AlertDialog.Builder(this);
         pictureDialog.setTitle("Select Action");
         String[] pictureDialogItems = {
                 "Photo Gallery",
-                "Camera" };
+                "Camera"};
         pictureDialog.setItems(pictureDialogItems,
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -189,6 +185,7 @@ public class UploadBukti extends AppCompatActivity {
                 });
         pictureDialog.show();
     }
+
     public void choosePhotoFromGallary() {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -234,68 +231,64 @@ public class UploadBukti extends AppCompatActivity {
     }
 
 
-    public void UploadImageToServer(){
+    public void UploadImageToServer() {
 
-        if(validate()) {
+        FixBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
 
-            FixBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        byteArray = byteArrayOutputStream.toByteArray();
 
-            byteArray = byteArrayOutputStream.toByteArray();
+        ConvertImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
-            ConvertImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
+        class AsyncTaskUploadClass extends AsyncTask<Void, Void, String> {
 
-            class AsyncTaskUploadClass extends AsyncTask<Void, Void, String> {
+            @Override
+            protected void onPreExecute() {
 
-                @Override
-                protected void onPreExecute() {
+                super.onPreExecute();
 
-                    super.onPreExecute();
-
-                    progressDialog = ProgressDialog.show(context, "Image is Uploading", "Please Wait", false, false);
-                }
-
-                @Override
-                protected void onPostExecute(String string1) {
-
-                    super.onPostExecute(string1);
-
-                    progressDialog.dismiss();
-
-                    Toast.makeText(context, string1, Toast.LENGTH_LONG).show();
-
-                    Intent i = new Intent(UploadBukti.this, MainActivity.class);
-                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    finish();
-                    startActivity(i);
-
-                }
-
-                @Override
-                protected String doInBackground(Void... params) {
-                    Preferences pref = new Preferences(getApplicationContext());
-                    DonaturModel donaturModel = pref.getUserSession();
-
-                    ImageProcessClass imageProcessClass = new ImageProcessClass();
-
-                    HashMap<String, String> HashMapParams = new HashMap<String, String>();
-
-                    HashMapParams.put(ImageTag, GetImageNameFromEditText);
-                    HashMapParams.put(config.KEY_ID_DONASI, intent.getStringExtra("id_donasi"));
-                    HashMapParams.put(ImageName, ConvertImage);
-
-                    String FinalData = imageProcessClass.ImageHttpRequest(config.URL_UPLOAD_BUKTI, HashMapParams);
-
-                    return FinalData;
-                }
+                progressDialog = ProgressDialog.show(context, "Image is Uploading", "Please Wait", false, false);
             }
-            AsyncTaskUploadClass AsyncTaskUploadClassOBJ = new AsyncTaskUploadClass();
-            AsyncTaskUploadClassOBJ.execute();
+
+            @Override
+            protected void onPostExecute(String string1) {
+
+                super.onPostExecute(string1);
+
+                progressDialog.dismiss();
+
+                Toast.makeText(context, string1, Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(UploadBukti.this, MainActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
+                startActivity(i);
+
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                Preferences pref = new Preferences(getApplicationContext());
+                DonaturModel donaturModel = pref.getUserSession();
+
+                ImageProcessClass imageProcessClass = new ImageProcessClass();
+
+                HashMap<String, String> HashMapParams = new HashMap<String, String>();
+
+                HashMapParams.put(config.KEY_ID_DONASI, intent.getStringExtra("id_donasi"));
+                HashMapParams.put(ImageName, ConvertImage);
+
+                String FinalData = imageProcessClass.ImageHttpRequest(config.URL_UPLOAD_BUKTI, HashMapParams);
+
+                return FinalData;
+            }
         }
+        AsyncTaskUploadClass AsyncTaskUploadClassOBJ = new AsyncTaskUploadClass();
+        AsyncTaskUploadClassOBJ.execute();
     }
 
-    public class ImageProcessClass{
+    public class ImageProcessClass {
 
-        public String ImageHttpRequest(String requestURL,HashMap<String, String> PData) {
+        public String ImageHttpRequest(String requestURL, HashMap<String, String> PData) {
 
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -338,7 +331,7 @@ public class UploadBukti extends AppCompatActivity {
 
                     String RC2;
 
-                    while ((RC2 = bufferedReader.readLine()) != null){
+                    while ((RC2 = bufferedReader.readLine()) != null) {
 
                         stringBuilder.append(RC2);
                     }
@@ -379,8 +372,7 @@ public class UploadBukti extends AppCompatActivity {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Now user should be able to use camera
 
-            }
-            else {
+            } else {
 
                 Toast.makeText(context, "Unable to use Camera..Please Allow us to use Camera", Toast.LENGTH_LONG).show();
 
@@ -426,34 +418,17 @@ public class UploadBukti extends AppCompatActivity {
 //        notificationManager.notify(NOTIFICATION_ID, builder.build());
 //    }
 
-    public void identified(){
+    public void identified() {
         this.id_bencana = findViewById(R.id.id_bencana);
         this.nama_bencana = findViewById(R.id.nama_bencana);
         this.nama_relawan = findViewById(R.id.nama_relawan);
         this.nominal = findViewById(R.id.nominal);
         this.keterangan = findViewById(R.id.keterangan);
         ETnominal = (EditText) findViewById(R.id.total_donasi);
-        GetImageFromGalleryButton = (Button)findViewById(R.id.buttonSelect);
-        UploadImageOnServerButton = (Button)findViewById(R.id.buttonUpload);
-        ShowSelectedImage = (ImageView)findViewById(R.id.imageView);
-        imageName=(EditText)findViewById(R.id.imageName);
+        GetImageFromGalleryButton = (Button) findViewById(R.id.buttonSelect);
+        UploadImageOnServerButton = (Button) findViewById(R.id.buttonUpload);
+        ShowSelectedImage = (ImageView) findViewById(R.id.imageView);
+        imageName = (EditText) findViewById(R.id.imageName);
     }
 
-    public boolean validate() {
-        boolean valid = false;
-
-        //Get values from EditText fields
-        String TimageName = imageName.getText().toString();
-
-        //Handling validation for Email field
-        if (TimageName.isEmpty()){
-            valid = false;
-            imageName.setError("Tolong masukkan nama bukti");
-        } else {
-            valid = true;
-            imageName.setError(null);
-        }
-
-        return valid;
-    }
 }

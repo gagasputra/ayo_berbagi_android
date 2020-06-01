@@ -17,7 +17,7 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.example.ayoberbagi_mysql.R;
 import com.example.ayoberbagi_mysql.config.ImageAdapter;
 import com.example.ayoberbagi_mysql.config.config;
-import com.example.ayoberbagi_mysql.relawan.R_DetailDonasi;
+import com.example.ayoberbagi_mysql.relawan.R_DetailDonasiEnd;
 import com.example.ayoberbagi_mysql.relawan.model.RelawanProsesModel;
 
 import java.util.ArrayList;
@@ -82,7 +82,7 @@ public class AdapterViewDDiterimaR extends RecyclerView.Adapter<AdapterViewDDite
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, R_DetailDonasi.class);
+                Intent i = new Intent(context, R_DetailDonasiEnd.class);
                 i.putExtra("id_donasi", model.getId_donasi());
                 i.putExtra("nama_donatur", model.getNama_donatur());
                 i.putExtra("nominal", model.getNominal());
@@ -92,6 +92,8 @@ public class AdapterViewDDiterimaR extends RecyclerView.Adapter<AdapterViewDDite
                 i.putExtra("jumlah_total", model.getJumlah_total());
                 i.putExtra("bukti", model.getBukti());
                 i.putExtra("upload_path", model.getUpload_path());
+                i.putExtra("waktu_diterima", model.getWaktu_diterima());
+                Log.d("waktu_diterima_relawan", "waktu diterima" + model.getWaktu_diterima());
                 context.startActivity(i);
             }
         });

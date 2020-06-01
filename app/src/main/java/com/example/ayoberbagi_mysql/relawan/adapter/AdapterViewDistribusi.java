@@ -95,6 +95,7 @@ public class AdapterViewDistribusi extends RecyclerView.Adapter<AdapterViewDistr
                 i.putExtra("lokasi_distribusi", model.getLokasi_distribusi());
                 i.putExtra("laporan", model.getLaporan());
                 i.putExtra("konfirmasi", model.getKonfirmasi());
+                i.putExtra("status", model.getStatus());
                 context.startActivity(i);
             }
         });

@@ -86,6 +86,7 @@ public class BeritaFragment extends Fragment {
                                 bm.setId_distribusi(data.getString("id_distribusi"));
                                 bm.setId_bencana(data.getString("id_bencana"));
                                 bm.setNama_bencana(data.getString("nama_bencana"));
+                                bm.setTgl_kejadian(data.getString("tgl_kejadian"));
                                 bm.setTanggal_distribusi(data.getString("tanggal_distribusi"));
                                 bm.setTgl_akhir_distribusi(data.getString("tgl_akhir_distribusi"));
                                 bm.setLokasi_distribusi(data.getString("lokasi_distribusi"));

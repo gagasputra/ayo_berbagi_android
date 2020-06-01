@@ -106,6 +106,7 @@ public class DDiterimaRelawan extends Fragment {
                                 rpm.setNama_donatur(hasil.getString("nama_donatur"));
                                 rpm.setNominal(hasil.getString("nominal"));
                                 rpm.setWaktu_donasi(hasil.getString("waktu_donasi"));
+                                rpm.setWaktu_diterima(hasil.getString("waktu_diterima"));
                                 rpm.setBukti(config.URL_GAMBAR + hasil.getString("bukti"));
                                 rpm.setUpload_path(hasil.getString("upload_path"));
                                 rpm.setFoto(config.URL_GAMBAR + hasil.getString("foto"));

@@ -26,6 +26,9 @@ import com.example.ayoberbagi_mysql.config.config;
 import com.example.ayoberbagi_mysql.relawan.model.RelawanModel;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,7 +86,6 @@ public class R_DetailDonasi extends AppCompatActivity {
             setProfileImage(config.URL_KOSONGAN + upload_path);
         }
 
-
 //        imageLoader = ImageAdapter.getInstance(context).getImageLoader();
 //        final NetworkImageView imageView1 = (NetworkImageView)findViewById(R.id.bukti);
 //        imageView1.setImageUrl(config.URL_KOSONGAN + upload_path, imageLoader);
@@ -105,12 +107,25 @@ public class R_DetailDonasi extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Intent i = new Intent(R_DetailDonasi.this, ActivityRelawan.class);
-                        Log.d("terima", "terima" + response);
-                        Toast.makeText(context, "Donasi Berhasil Diterima", Toast.LENGTH_LONG).show();
-                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        finish();
-                        startActivity(i);
+                        try {
+                            Log.d("berhasil", "Response: " + response);
+                            JSONObject user = new JSONObject(response);
+
+                            if (user.getString("akses").equals("update")) {
+                                Toast.makeText(context, "Mohon Ganti Password dan Lengkapi Keamanan Akun", Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(R_DetailDonasi.this, RelawanProfile.class);
+                                startActivity(i);
+                            } else {
+                                Intent i = new Intent(R_DetailDonasi.this, ActivityRelawan.class);
+                                Log.d("terima", "terima" + response);
+                                Toast.makeText(context, "Donasi Berhasil Diterima", Toast.LENGTH_LONG).show();
+                                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                finish();
+                                startActivity(i);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -123,14 +138,18 @@ public class R_DetailDonasi extends AppCompatActivity {
                 RelawanModel relawanModel = pref.getRelawanSession();
 
                 Map<String, String> params = new HashMap<>();
+
                 params.put(config.KEY_ID_DONASI, intent.getStringExtra("id_donasi"));
                 params.put(config.KEY_ID_DONATUR, relawanModel.getIdPj());
+                params.put("username", relawanModel.getUsername());
 
                 return params;
             }
 
         };
-        Volley.newRequestQueue(this).add(stringRequest);
+        Volley.newRequestQueue(this).
+
+                add(stringRequest);
     }
 
     public void tolakDonasi(View view) {

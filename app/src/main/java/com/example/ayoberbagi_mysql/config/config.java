@@ -9,8 +9,12 @@ public class config {
 //    public static final String URL_KOSONGAN = "http://192.168.43.8/";
 
     //IP Rumah
-    public static final String URL = "http://192.168.1.10/ayoberbagi/proses.php";
-    public static final String URL_KOSONGAN = "http://192.168.1.10/";
+    public static final String URL = "http://192.168.1.2/ayoberbagi/proses.php";
+    public static final String URL_KOSONGAN = "http://192.168.1.2/";
+
+    //IP Posko
+//    public static final String URL = "http://192.168.41.141/ayoberbagi/proses.php";
+//    public static final String URL_KOSONGAN = "http://192.168.42.141/";
 
     //IP Wifi Kontrakan
 //    public static final String URL = "http://192.168.1.19/ayoberbagi/proses.php";
@@ -43,10 +47,12 @@ public class config {
     public static final String URL_DONASI = URL + "?menu=add_donasi";
     public static final String URL_DONASI_BARANG = URL + "?menu=donasi_barang";
     public static final String URL_VIEW_LAPORAN = URL + "?menu=view_laporan";
+    public static final String URL_CEK_USERNAME = URL + "?menu=cek_username";
     public static final String URL_DETAIL_LAPORAN = URL + "?menu=detail_laporan";
     public static final String URL_UPLOAD_BUKTI = URL + "?menu=upload_bukti";
     public static final String URL_UPLOAD_DISTRIBUSI = URL + "?menu=upload_distribusi";
     public static final String URL_UPLOAD_PP = URL + "?menu=edit_foto_profile";
+    public static final String URL_UPLOAD_PP_RELAWAN = URL + "?menu=edit_profile_relawan";
     public static final String URL_EDIT_AKUN = URL + "?menu=edit_akun";
 
     public static final String URL_PROFILE = URL + "?menu=view_profile";

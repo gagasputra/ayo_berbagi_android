@@ -62,8 +62,6 @@ public class DonasiBarang extends AppCompatActivity {
 
     Bitmap FixBitmap;
 
-    String ImageTag = "image_tag";
-
     String ImageName = "image_data";
 
     String JumTot = "jumlah_total";
@@ -156,7 +154,6 @@ public class DonasiBarang extends AppCompatActivity {
         UploadImageOnServerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GetImageNameFromEditText = imageName.getText().toString();
                 UploadImageToServer();
 
             }
@@ -398,7 +395,6 @@ public class DonasiBarang extends AppCompatActivity {
 
 //                    HashMapParams.put(JumTot, jumlah_total);
 
-                HashMapParams.put(ImageTag, GetImageNameFromEditText);
                 HashMapParams.put(config.KEY_ID_BENCANA, intent.getStringExtra("id_bencana"));
                 HashMapParams.put(config.KEY_ANONIM, anonim);
                 HashMapParams.put(config.KEY_ID_DONATUR, donaturModel.getIdDonatur());
@@ -536,6 +532,5 @@ public class DonasiBarang extends AppCompatActivity {
         GetImageFromGalleryButton = (Button) findViewById(R.id.buttonSelect);
         UploadImageOnServerButton = (Button) findViewById(R.id.kirimDonasi);
         ShowSelectedImage = (ImageView) findViewById(R.id.imageView);
-        imageName = (EditText) findViewById(R.id.imageName);
     }
 }
