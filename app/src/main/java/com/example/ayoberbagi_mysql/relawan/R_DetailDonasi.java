@@ -1,11 +1,14 @@
 package com.example.ayoberbagi_mysql.relawan;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +37,8 @@ import java.util.Map;
 
 public class R_DetailDonasi extends AppCompatActivity {
 
-    TextView id_bencana, nama_donatur, nominal, waktu_donasi, kategori, jumlah;
+    TextView id_bencana, nama_donatur;
+    EditText nominal, waktu_donasi, kategori, jumlah;
     ImageView bukti;
     Context context;
     Button terimaDonasi, tolakDonasi;
@@ -89,6 +93,46 @@ public class R_DetailDonasi extends AppCompatActivity {
 //        imageLoader = ImageAdapter.getInstance(context).getImageLoader();
 //        final NetworkImageView imageView1 = (NetworkImageView)findViewById(R.id.bukti);
 //        imageView1.setImageUrl(config.URL_KOSONGAN + upload_path, imageLoader);
+
+        terimaDonasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(R_DetailDonasi.this)
+                        .setIcon(R.drawable.ic_terima)
+                        .setTitle("Terima Donasi")
+                        .setMessage("Apakah Anda ingin menerima donasi ini?")
+                        .setPositiveButton("Ya", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                terimaDonasi();
+                            }
+
+                        })
+                        .setNegativeButton("Tidak", null)
+                        .show();
+            }
+        });
+
+        tolakDonasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(R_DetailDonasi.this)
+                        .setIcon(R.drawable.ic_tolak)
+                        .setTitle("Tolak Donasi")
+                        .setMessage("Apakah Anda ingin menolak donasi ini?")
+                        .setPositiveButton("Ya", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                tolakDonasi();
+                            }
+
+                        })
+                        .setNegativeButton("Tidak", null)
+                        .show();
+            }
+        });
     }
 
     public void identified() {
@@ -102,7 +146,7 @@ public class R_DetailDonasi extends AppCompatActivity {
     }
 
 
-    public void terimaDonasi(View view) {
+    public void terimaDonasi() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, config.URL_TERIMA_DONASI,
                 new Response.Listener<String>() {
                     @Override
@@ -116,9 +160,9 @@ public class R_DetailDonasi extends AppCompatActivity {
                                 Intent i = new Intent(R_DetailDonasi.this, RelawanProfile.class);
                                 startActivity(i);
                             } else {
+                                Toast.makeText(context, "Donasi Berhasil Diterima", Toast.LENGTH_LONG).show();
                                 Intent i = new Intent(R_DetailDonasi.this, ActivityRelawan.class);
                                 Log.d("terima", "terima" + response);
-                                Toast.makeText(context, "Donasi Berhasil Diterima", Toast.LENGTH_LONG).show();
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 finish();
                                 startActivity(i);
@@ -152,7 +196,7 @@ public class R_DetailDonasi extends AppCompatActivity {
                 add(stringRequest);
     }
 
-    public void tolakDonasi(View view) {
+    public void tolakDonasi() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, config.URL_TOLAK_DONASI,
                 new Response.Listener<String>() {
                     @Override

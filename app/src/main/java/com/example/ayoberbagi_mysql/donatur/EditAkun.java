@@ -1,6 +1,8 @@
 package com.example.ayoberbagi_mysql.donatur;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,10 @@ import com.example.ayoberbagi_mysql.R;
 import com.example.ayoberbagi_mysql.config.Preferences;
 import com.example.ayoberbagi_mysql.config.config;
 import com.example.ayoberbagi_mysql.donatur.model.DonaturModel;
+import com.example.ayoberbagi_mysql.relawan.DetailDistribusi;
+import com.example.ayoberbagi_mysql.relawan.RPertanyaan;
+import com.example.ayoberbagi_mysql.relawan.UploadDistribusi;
+import com.example.ayoberbagi_mysql.relawan.model.RelawanModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -170,5 +176,21 @@ public class EditAkun extends AppCompatActivity {
     }
 
     public void pertanyaan(View view) {
+        new AlertDialog.Builder(this)
+                .setIcon(R.drawable.logo)
+                .setTitle("Apakah anda ingin mengubah pertanyaan keamanan?")
+                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Preferences pref = new Preferences(getApplicationContext());
+                        DonaturModel donaturModel = pref.getUserSession();
+                        Intent i = new Intent(EditAkun.this, DPertanyaan.class);
+                        i.putExtra("id_donatur", donaturModel.getIdDonatur());
+                        startActivity(i);
+                    }
+
+                })
+                .setNegativeButton("Tidak", null)
+                .show();
     }
 }

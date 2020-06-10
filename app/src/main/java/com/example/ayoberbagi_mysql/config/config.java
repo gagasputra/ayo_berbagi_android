@@ -9,8 +9,8 @@ public class config {
 //    public static final String URL_KOSONGAN = "http://192.168.43.8/";
 
     //IP Rumah
-    public static final String URL = "http://192.168.1.2/ayoberbagi/proses.php";
-    public static final String URL_KOSONGAN = "http://192.168.1.2/";
+    public static final String URL = "http://192.168.1.11/ayoberbagi/proses.php";
+    public static final String URL_KOSONGAN = "http://192.168.1.11/";
 
     //IP Posko
 //    public static final String URL = "http://192.168.41.141/ayoberbagi/proses.php";
@@ -35,6 +35,7 @@ public class config {
 
     public static final String URL_GAMBAR = URL_KOSONGAN + "kuliah/AyoBerbagi/assets/upload/";
     public static final String URL_NOIMAGE = URL_GAMBAR + "noimage.jpg";
+    public static final String URL_NOIMAGE_SERVER = URL_KOSONGAN + "ayoberbagi/image/noimage.jpg";
     public static final String URL_BUKTI = URL_KOSONGAN + "kuliah/AyoBerbagi/assets/upload/";
 
     public static final String URL_LOGIN = URL + "?menu=login";
@@ -42,6 +43,7 @@ public class config {
     public static final String URL_VIEW_BENCANA = URL + "?menu=view_bencana";
     public static final String URL_VIEW_SEMUA_DITERIMA = URL + "?menu=view_semua_diterima";
     public static final String URL_SELECT_BENCANA = URL + "?menu=select_bencana";
+    public static final String URL_DIALOG_BARANG = URL + "?menu=dialog_barang";
     public static final String URL_VIEW_DISTRIBUSI = URL + "?menu=view_distribusi";
     public static final String URL_DONASI_TERKINI = URL + "?menu=donasi_terkini";
     public static final String URL_DONASI = URL + "?menu=add_donasi";
@@ -50,6 +52,7 @@ public class config {
     public static final String URL_CEK_USERNAME = URL + "?menu=cek_username";
     public static final String URL_DETAIL_LAPORAN = URL + "?menu=detail_laporan";
     public static final String URL_UPLOAD_BUKTI = URL + "?menu=upload_bukti";
+    public static final String URL_UBAH_KEAMANAN = URL + "?menu=ubah_keamanan";
     public static final String URL_UPLOAD_DISTRIBUSI = URL + "?menu=upload_distribusi";
     public static final String URL_UPLOAD_PP = URL + "?menu=edit_foto_profile";
     public static final String URL_UPLOAD_PP_RELAWAN = URL + "?menu=edit_profile_relawan";

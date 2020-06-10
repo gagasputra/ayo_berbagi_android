@@ -169,6 +169,12 @@ public class EditAkun extends AppCompatActivity {
         return valid;
     }
 
-    public void pertanyaan(View view){
+    public void pertanyaan(View view) {
+        Preferences pref = new Preferences(getApplicationContext());
+        RelawanModel relawanModel = pref.getRelawanSession();
+        Intent i = new Intent(EditAkun.this, RPertanyaan.class);
+        i.putExtra("id_pj", relawanModel.getIdPj());
+        startActivity(i);
+        Log.d("intent", "intent: " +relawanModel.getIdPj());
     }
 }

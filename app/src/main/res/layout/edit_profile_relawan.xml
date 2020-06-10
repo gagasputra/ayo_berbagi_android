@@ -61,7 +61,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/button_logout_relawan"
+                    android:background="@drawable/button_submit"
                     android:text="Pilih Foto"
                     android:textColor="@color/whiteTextColor" />
 

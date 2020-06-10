@@ -113,7 +113,7 @@ public class EditProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.edit_profile_relawan);
         context = EditProfile.this;
 
         TVusername = findViewById(R.id.username);
@@ -252,7 +252,7 @@ public class EditProfile extends AppCompatActivity {
 
                     super.onPreExecute();
 
-                    progressDialog = ProgressDialog.show(context, "Image is Uploading", "Please Wait", false, false);
+                    progressDialog = ProgressDialog.show(context, "Loading", "Please Wait", false, false);
                 }
 
                 @Override

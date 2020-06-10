@@ -103,16 +103,22 @@ public class DetailDistribusi extends AppCompatActivity {
         sgambar2 = config.URL_KOSONGAN + intent.getStringExtra("gambar2");
         sgambar3 = config.URL_KOSONGAN + intent.getStringExtra("gambar3");
 
-        imageLoader = ImageAdapter.getInstance(context).getImageLoader();
         NetworkImageView imageView1 = (NetworkImageView) findViewById(R.id.gambar1);
         NetworkImageView imageView2 = (NetworkImageView) findViewById(R.id.gambar2);
         NetworkImageView imageView3 = (NetworkImageView) findViewById(R.id.gambar3);
-        imageView1.setImageUrl(sgambar1, imageLoader);
-        imageView2.setImageUrl(sgambar2, imageLoader);
-        imageView3.setImageUrl(sgambar3, imageLoader);
+        imageLoader = ImageAdapter.getInstance(context).getImageLoader();
+        if (intent.getStringExtra("gambar1").equalsIgnoreCase("null")) {
+            imageView1.setImageUrl(config.URL_NOIMAGE_SERVER, imageLoader);
+            imageView2.setImageUrl(config.URL_NOIMAGE_SERVER, imageLoader);
+            imageView3.setImageUrl(config.URL_NOIMAGE_SERVER, imageLoader);
+        } else {
+            imageView1.setImageUrl(sgambar1, imageLoader);
+            imageView2.setImageUrl(sgambar2, imageLoader);
+            imageView3.setImageUrl(sgambar3, imageLoader);
+            ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.flipperid);
+            viewFlipper.startFlipping();
+        }
 
-        ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.flipperid);
-        viewFlipper.startFlipping();
 
 //        infoRelawan = findViewById(R.id.infoRelawan);
 //        infoRelawan.setOnClickListener(new View.OnClickListener() {
@@ -281,10 +287,31 @@ public class DetailDistribusi extends AppCompatActivity {
     }
 
     public void uploadBukti(View view) {
-        Intent i = new Intent(DetailDistribusi.this, UploadDistribusi.class);
-        i.putExtra("id_bencana", id_bencana);
-        i.putExtra("nama_bencana", nama_bencana);
-        i.putExtra("total_donasi", total_donasi);
-        startActivity(i);
+
+        String tgl_distribusi = intent.getStringExtra("tanggal_distribusi");
+        if (tgl_distribusi.equalsIgnoreCase("null")) {
+            Intent i = new Intent(DetailDistribusi.this, UploadDistribusi.class);
+            i.putExtra("id_bencana", id_bencana);
+            i.putExtra("nama_bencana", nama_bencana);
+            i.putExtra("total_donasi", total_donasi);
+            startActivity(i);
+        } else {
+            new AlertDialog.Builder(this)
+                    .setIcon(R.drawable.logo)
+                    .setTitle("Apakah anda ingin upload distribusi lagi?")
+                    .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent i = new Intent(DetailDistribusi.this, UploadDistribusi.class);
+                            i.putExtra("id_bencana", id_bencana);
+                            i.putExtra("nama_bencana", nama_bencana);
+                            i.putExtra("total_donasi", total_donasi);
+                            startActivity(i);
+                        }
+
+                    })
+                    .setNegativeButton("Tidak", null)
+                    .show();
+        }
     }
 }

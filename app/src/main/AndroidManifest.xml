@@ -79,6 +79,9 @@
             android:name=".donatur.EditAkun"
             android:label="Edit Akun" />
         <activity
+            android:name=".donatur.DPertanyaan"
+            android:label="Pertanyaan Keamanan" />
+        <activity
             android:name=".relawan.EditAkun"
             android:label="Edit Akun"
             android:theme="@style/AppThemeRelawan" />
@@ -98,6 +101,10 @@
         <activity
             android:name=".Pertanyaan"
             android:theme="@style/B4Activity" />
+        <activity
+            android:name=".relawan.RPertanyaan"
+            android:label="Pertanyaan Keamanan"
+            android:theme="@style/AppThemeRelawan" />
         <activity
             android:name=".relawan.ActivityRelawan"
             android:label="Relawan"

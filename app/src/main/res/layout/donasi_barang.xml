@@ -579,7 +579,7 @@
                 android:id="@+id/kirimDonasi"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/button_submit"
                 android:text="Donasi"
                 android:textColor="#FFF" />
 

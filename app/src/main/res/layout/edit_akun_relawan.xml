@@ -214,11 +214,11 @@
                 <Button
                     android:id="@+id/editAkun"
                     android:onClick="editAkun"
-                    android:layout_width="150dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@drawable/button_logout_relawan"
-                    android:text="Edit Akun"
+                    android:text="Edit"
                     android:textColor="@color/whiteTextColor" />
 
                 <Button

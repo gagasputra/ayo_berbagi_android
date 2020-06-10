@@ -65,12 +65,12 @@ public class ActivityRelawan extends AppCompatActivity {
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_proses:
-                    toolbar.setTitle("Donation Diproses");
+                    toolbar.setTitle("Donasi Diproses");
                     fragment = new DProsesRelawan();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_history:
-                    toolbar.setTitle("Donation Diterima");
+                    toolbar.setTitle("Donasi Diterima");
                     fragment = new DDiterimaRelawan();
                     loadFragment(fragment);
                     return true;

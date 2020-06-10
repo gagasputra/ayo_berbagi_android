@@ -221,6 +221,17 @@
                     android:text="Edit Akun"
                     android:textColor="@color/whiteTextColor" />
 
+                <Button
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/pertanyaan"
+                    android:onClick="pertanyaan"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_submit"
+                    android:text="Ubah Pertanyaan Keamanan"
+                    android:textColor="@color/whiteTextColor" />
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

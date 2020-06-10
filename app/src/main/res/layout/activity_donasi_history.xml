@@ -207,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:background="#2ca545"
+                    android:background="@drawable/button_info"
                     android:drawableLeft="@drawable/search"
                     android:drawablePadding="3dp"
                     android:onClick="detailDonasi"

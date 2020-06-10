@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="Donasi Diterima"
+            android:text="DONASI DITERIMA"
             android:textAlignment="center"
             android:textColor="#111"
             android:textSize="16dp" />
