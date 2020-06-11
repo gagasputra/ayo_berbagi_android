@@ -70,20 +70,44 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:id="@+id/info"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:gravity="left">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_info"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pastikan nomor resi terlihat jelas pada bukti pengiriman!"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/blackTextColor"
+                    android:fontFamily="sans-serif"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:gravity="center">
 
                 <Button
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="Upload >>"
+                    android:text="Upload"
                     android:textColor="#FFF"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/button_submit"
                     android:id="@+id/buttonUpload"
                     android:visibility="gone"/>
-
             </LinearLayout>
 
         </LinearLayout>

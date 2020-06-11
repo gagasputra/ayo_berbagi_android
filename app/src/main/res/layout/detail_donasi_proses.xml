@@ -230,12 +230,13 @@
                 <Button
                     android:id="@+id/btn_choose_file"
                     android:padding="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_submit"
                     android:onClick="upload_bukti"
+                    android:textColor="@color/whiteTextColor"
                     android:text="Upload Bukti" />
 
             </LinearLayout>

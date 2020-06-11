@@ -9,8 +9,8 @@ public class config {
 //    public static final String URL_KOSONGAN = "http://192.168.43.8/";
 
     //IP Rumah
-    public static final String URL = "http://192.168.1.11/ayoberbagi/proses.php";
-    public static final String URL_KOSONGAN = "http://192.168.1.11/";
+    public static final String URL = "http://192.168.1.6/ayoberbagi/proses.php";
+    public static final String URL_KOSONGAN = "http://192.168.1.6/";
 
     //IP Posko
 //    public static final String URL = "http://192.168.41.141/ayoberbagi/proses.php";

@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +48,8 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
 public class UploadBukti extends AppCompatActivity {
+
+    LinearLayout info;
 
     Button GetImageFromGalleryButton, UploadImageOnServerButton;
 
@@ -120,6 +123,7 @@ public class UploadBukti extends AppCompatActivity {
         String Tnama_bencana = intent.getStringExtra("nama_bencana");
         if (Tnominal.equalsIgnoreCase("Donasi Barang")) {
             setTitle("Upload Bukti Pengiriman");
+            info.setVisibility(View.VISIBLE);
         } else {
             setTitle("Upload Bukti Transfer");
         }
@@ -429,6 +433,7 @@ public class UploadBukti extends AppCompatActivity {
         UploadImageOnServerButton = (Button) findViewById(R.id.buttonUpload);
         ShowSelectedImage = (ImageView) findViewById(R.id.imageView);
         imageName = (EditText) findViewById(R.id.imageName);
+        info = findViewById(R.id.info);
     }
 
 }

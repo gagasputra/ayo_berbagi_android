@@ -73,6 +73,7 @@
                 <EditText
                     android:id="@+id/ETusername"
                     android:layout_width="0dp"
+                    android:inputType="text"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAlignment="center" />

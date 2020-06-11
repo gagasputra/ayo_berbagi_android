@@ -44,6 +44,7 @@
             <EditText
                 android:id="@+id/editTextNama"
                 android:layout_width="match_parent"
+                android:inputType="text"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ems="10"/>

@@ -24,7 +24,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\gagas\AppData\Local\Temp\baseline_check_circle_24.xml" />
+                                                <entry key="imagePath" value="C:\Users\gagas\AppData\Local\Temp\baseline_info_24.xml" />
                                                 <entry key="opacityPercent" value="80" />
                                               </map>
                                             </option>
@@ -36,7 +36,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/check_circle/baseline_check_circle_24.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/info/baseline_info_24.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -80,9 +80,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_terima" />
+                                      <entry key="outputName" value="ic_info" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="51ff00" />
+                                      <entry key="themeColor" value="ff0000" />
                                     </map>
                                   </option>
                                 </PersistentState>
