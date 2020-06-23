@@ -56,7 +56,8 @@ public class ResetPassword extends AppCompatActivity {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            if(response.equalsIgnoreCase("null")){
+                            if (response.equalsIgnoreCase("null")) {
+                                qna.setVisibility(View.GONE);
                                 Toast.makeText(context, "Username tidak valid", Toast.LENGTH_SHORT).show();
                             } else {
                                 qna.setVisibility(View.VISIBLE);
@@ -120,12 +121,44 @@ public class ResetPassword extends AppCompatActivity {
     }
 
     public void inputUname(View view) {
-        if(ETusername.getText().toString().equals(username) && ETjawaban.getText().toString().equalsIgnoreCase(jawaban)){
-            Intent i = new Intent(context, ChangePassword.class);
-            i.putExtra("username", username);
-            startActivity(i);
-        } else {
-            Toast.makeText(context, "Username atau Jawaban Salah!", Toast.LENGTH_LONG).show();
-        }
+        jawaban = ETjawaban.getText().toString();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, config.URL_INPUT_RESET,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject user = new JSONObject(response);
+                            if (user.getString("akses").equalsIgnoreCase("berhasil")) {
+                                Intent i = new Intent(context, ChangePassword.class);
+                                i.putExtra("username", username);
+                                startActivity(i);
+                            } else {
+                                Toast.makeText(context, "Jawaban Salah!", Toast.LENGTH_LONG).show();
+                            }
+                        } catch (
+                                JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, "The server unreachable", Toast.LENGTH_LONG).show();
+
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put(config.KEY_USERNAME, username);
+                params.put("answer", jawaban);
+
+                //returning parameter
+                return params;
+            }
+        };
+        //Adding the string request to the queue
+        Volley.newRequestQueue(this).add(stringRequest);
     }
 }

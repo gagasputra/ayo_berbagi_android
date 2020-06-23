@@ -119,6 +119,8 @@ public class UploadBuktiDistribusi extends AppCompatActivity {
         id_bencana = intent.getStringExtra("id_bencana");
         TVnama_bencana.setText(intent.getStringExtra("nama_bencana"));
 
+        Log.d("intent : ", id_bencana);
+
         inputImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

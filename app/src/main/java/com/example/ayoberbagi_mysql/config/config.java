@@ -9,8 +9,8 @@ public class config {
 //    public static final String URL_KOSONGAN = "http://192.168.43.8/";
 
     //IP Rumah
-    public static final String URL = "http://192.168.1.6/ayoberbagi/proses.php";
-    public static final String URL_KOSONGAN = "http://192.168.1.6/";
+    public static final String URL = "http://192.168.1.11/ayoberbagi/proses.php";
+    public static final String URL_KOSONGAN = "http://192.168.1.11/";
 
     //IP Posko
 //    public static final String URL = "http://192.168.41.141/ayoberbagi/proses.php";
@@ -50,6 +50,8 @@ public class config {
     public static final String URL_DONASI_BARANG = URL + "?menu=donasi_barang";
     public static final String URL_VIEW_LAPORAN = URL + "?menu=view_laporan";
     public static final String URL_CEK_USERNAME = URL + "?menu=cek_username";
+    public static final String URL_INPUT_RESET = URL + "?menu=input_reset";
+    public static final String URL_REGISTER_RELAWAN = URL + "?menu=register_relawan";
     public static final String URL_DETAIL_LAPORAN = URL + "?menu=detail_laporan";
     public static final String URL_UPLOAD_BUKTI = URL + "?menu=upload_bukti";
     public static final String URL_UBAH_KEAMANAN = URL + "?menu=ubah_keamanan";

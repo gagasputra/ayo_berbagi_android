@@ -32,6 +32,11 @@
     <string name="title_activity_profile">Profile</string>
     <string name="action_settings">Settings</string>
     <string name="desk_pertanyaan">Pertanyaan keamanan diperlukan apabila terjadi lupa password</string>
+    <string name="konfirmasi1">Foto KTP Anda akan membantu kami dalam memvalidasi data diri.</string>
+    <string name="konfirmasi2">Apa yang harus dilakukan untuk konfirmasi data diri?</string>
+    <string name="cara1">\u2022 Foto KTP Anda dan pastikan data diri terlihat jelas.</string>
+    <string name="cara2">\u2022 Lakukan selfie dengan memegang KTP Anda.</string>
+    <string name="cara3">\u2022 Pastikan KTP berada di sebelah wajah Anda.</string>
 
     <string-array name="donasiBarang">
         <item>Pakaian</item>
@@ -48,6 +53,13 @@
         <item>Perorangan</item>
         <item>Kelompok</item>
         <item>Perusahaan</item>
+    </string-array>
+
+    <string-array name="bank">
+        <item>BANK BRI</item>
+        <item>BANK Mandiri</item>
+        <item>BANK BCA</item>
+        <item>BANK BNI</item>
     </string-array>
 
     <string-array name="pertanyaan">

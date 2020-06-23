@@ -115,6 +115,4 @@ public class BeritaFragment extends Fragment {
         Volley.newRequestQueue(getActivity()).add(arrayRequest);
     }
 
-
-
 }

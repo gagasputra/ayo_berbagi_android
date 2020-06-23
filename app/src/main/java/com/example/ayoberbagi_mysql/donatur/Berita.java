@@ -39,7 +39,11 @@ public class Berita extends AppCompatActivity {
         ETtotal_donasi.setText("Rp. " + intent.getStringExtra("total_donasi") + ".00");
         String tgl_distribusi = intent.getStringExtra("tanggal_distribusi");
         String tgl_akhir_distribusi = intent.getStringExtra("tgl_akhir_distribusi");
-        ETtgl_distribusi.setText(tgl_distribusi + " s/d " + tgl_akhir_distribusi);
+        if(tgl_distribusi.equals(tgl_akhir_distribusi)){
+            ETtgl_distribusi.setText(tgl_distribusi);
+        } else {
+            ETtgl_distribusi.setText(tgl_distribusi + " s/d " + tgl_akhir_distribusi);
+        }
         ETlokasi_distribusi.setText(intent.getStringExtra("lokasi_distribusi"));
         ETlaporan.setText(intent.getStringExtra("laporan"));
         String gambar1 = intent.getStringExtra("gambar1");

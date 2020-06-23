@@ -116,8 +116,4 @@ public class BencanaFragment extends Fragment {
         });
         Volley.newRequestQueue(getActivity()).add(arrayRequest);
     }
-
-
-
-
 }

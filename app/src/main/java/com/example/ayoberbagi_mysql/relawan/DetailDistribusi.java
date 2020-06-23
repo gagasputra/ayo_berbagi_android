@@ -264,7 +264,11 @@ public class DetailDistribusi extends AppCompatActivity {
         TVDnama_bencana.setText(nama_bencana);
         ETDtotal_donasi.setText("Rp. " + total_donasi + ".00");
         ETDlokasi_distribusi.setText(lokasi_distribusi);
-        ETDtanggal_distribusi.setText(tgl_distribusi + " s/d " + tgl_akhir_distribusi);
+        if(tgl_distribusi.equals(tgl_akhir_distribusi)){
+            ETDtanggal_distribusi.setText(tgl_distribusi);
+        } else {
+            ETDtanggal_distribusi.setText(tgl_distribusi + " s/d " + tgl_akhir_distribusi);
+        }
         ETDbatas_akhir.setText(intent.getStringExtra("batas_akhir"));
         ETDlaporan.setText(intent.getStringExtra("laporan"));
 

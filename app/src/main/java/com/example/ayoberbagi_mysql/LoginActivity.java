@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private final String TAG = "debug gagas";
 
     //Declaration TextView
-    TextView lupa_password;
+    TextView lupa_password, daftar_baru_relawan;
 
     //Declaration EditTexts
     EditText editTextUsername;
@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         daftar_baru = findViewById(R.id.daftar_baru);
+        daftar_baru_relawan = findViewById(R.id.daftar_baru_relawan);
         lupa_password = findViewById(R.id.lupa_password);
 
         // Cek session login jika TRUE maka langsung buka MainActivity
@@ -108,6 +109,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 keDaftar();
+            }
+        });
+
+        daftar_baru_relawan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                keDaftarRelawan();
             }
         });
 
@@ -234,6 +242,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void keDaftar() {
         Intent intent = new Intent(context, Register.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void keDaftarRelawan() {
+        Intent intent = new Intent(context, RegisterRelawan.class);
         startActivity(intent);
         finish();
     }
